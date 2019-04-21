@@ -1,0 +1,308 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+body {
+	background:#fff;
+	line-height: 1;
+	color: #000;
+}
+ol, ul {
+	list-style: none;
+}
+a{
+	color:#000;text-decoration: none; 
+}
+a,span{
+	display:inline-block
+}
+hr{ 
+	display:none;
+}
+img{ 
+	border:0;
+}
+h1, h2, h3, h4{
+	margin:0;  
+	padding:0;
+}
+h1{ 
+	font-size:1.6em;
+}
+h2{ 
+	font-size:1.4em;
+}
+h3{ 
+	font-size:1.2em;
+}
+input{ 
+	border:1px solid #aaa;
+}
+@font-face {
+   font-style: normal;
+   font-weight: 300;
+   src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
+ }
+@font-face {
+   font-style: normal;
+   font-weight: 400;
+   src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+ }
+@font-face {
+   font-style: normal;
+   font-weight: 600;
+   src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+ }
+@font-face {
+   font-style: normal;
+   font-weight: 700;
+   src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+ }
+body{
+		color:#666;
+}
+a:link          { color:#333;     text-decoration:none;}
+a:visited       { color:#333;     text-decoration:none;}
+a:hover         { color:#7870ab;  text-decoration:none;}
+a:active        { color:#666;     text-decoration:none;}
+/* 페이징 - 현재 페이지 */
+  .selected               { font-weight:bold;  color:#f30;}
+/* 그림 */
+	.imageblock             { border:none;  padding:0;  margin:0; }
+/* 왼쪽 */
+	.left                   { }
+/* 가운데 */
+	.center                 { }
+/* 오른쪽 */
+	.right                  { }
+/* 그림 2개 배치 */
+	.dual                   { background-color:#fff; margin-bottom:5px;}
+/* 그림 3개 배치 */
+	.triple                 { background-color:#fff; margin-bottom:5px;}
+hr              { display:none;}
+img             { border:0;}
+h1, h2, h3, h4  { margin:0;  padding:0;}
+h1              { font-size:1.6em;}
+h2              { font-size:1.4em;}
+h3              { font-size:1.2em;}
+h4              { font-size:1em;}
+input           { border:1px solid #aaa;}
+textarea        { border:1px solid #aaa;}
+#contain {
+		width:1000px;
+		/* border:1px solid #bbb; */
+		margin:0px auto;
+		padding-bottom: 60px;
+		overflow:hidden;
+}
+#contents {
+		float:left;
+		width:650px;
+		overflow:hidden;
+}
+
+#paging            { padding-top:10px;  text-align:center; }
+#paging .numbox    { font-size:18px;margin:0 30px;vertical-align: middle}
+#paging .num span {width: 33px;height: 33px;box-sizing: border-box;line-height: 32px;border:1px solid #d7d7d7;color:#a9a8a8}
+#paging .num span.selected{background: #949979;border:1px solid #949979;color:#fff;}
+#paging #prevPage { background-image:url(images/ico_prev.png);background-repeat:no-repeat;background-size:11px 20px;width: 11px;height: 20px;overflow: hidden;text-indent:-9999px;vertical-align: middle}
+#paging #nextPage { background-image:url(images/ico_next.png);background-repeat:no-repeat;background-size:11px 20px;width: 11px;height: 20px;overflow: hidden;text-indent:-9999px;vertical-align: middle}
+
+/* reset */
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+ vertical-align: baseline;
+ font-style: inherit;
+ font-size: 100%;
+ outline: 0;
+ padding: 0;
+ margin: 0;
+ border: 0;
+ }
+:focus {
+ outline: 0;
+ }
+body {
+ background:#fff;
+ line-height: 1;       /*- 한글 기준은 1.2 -*/
+ color: #000;
+ }
+ol, ul {
+ list-style: none;
+ }
+table {
+ border-collapse: separate;
+ border-spacing: 0;
+ }
+caption, th, td {
+ font-weight: normal;
+ text-align: left;
+ }
+a{color:#000;text-decoration: none; }
+a,span{display:inline-block}
+html,
+body {
+	font-size: 14px;
+	letter-spacing: -0.3px;
+	letter-spacing: -0.02rem;
+	line-height: 1.2em;
+	position: relative;
+	color:#333;
+	font-weight: 400;
+	overflow-x: hidden !important;
+}
+#contain {
+	width: 100%;
+}
+#contents {
+	float:left;
+	width:100%;
+	overflow:hidden;
+	box-sizing: border-box;
+}
+/* searchList */
+#searchList_title{display: block;margin-bottom: 75px;}
+#searchList_title h2{font-size:42px;line-height: 42px;color:#231f20;display: block;text-align: center;position: relative;padding-bottom: 16px;font-weight: 600}
+#searchList_title h2:after{position: absolute;content: '';display: block;width:120px;height: 1px;background: #231f20;left:50%;margin-left:-60px;bottom:0}
+#searchList li{
+    position: relative;
+    border-bottom:0;
+    height: 274px;
+	padding:0;
+    margin-bottom: 27px;
+    overflow: hidden;
+	
+}
+#searchList .post_thumb {
+    position: absolute;
+    left: 0;
+}
+.list_url{width: 374px;height: 274px;background-repeat: no-repeat;background-size: cover;background-position: center center;}
+#searchList .post_thumb_content {
+    margin-left: 389px;
+}
+#searchList .list_category{
+	color:#949979;
+	font-size:14px;
+	line-height: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 15px;
+}
+#searchList .list_title {
+    width: auto;
+}
+#searchList .list_title a{
+    color: #231f20;
+    font-size: 20px;
+	line-height: 20px;
+    font-weight: 600;
+    display: block;
+	margin-bottom: 18px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#searchList .list_article a{
+    height: 66px;
+    color: #231f20;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+	margin-bottom: 30px;
+}
+
+#searchList .list_date {
+    color: #231f20;
+    font-size: 14px;
+	line-height: 14px;
+	font-weight: 300;
+    padding-top: 10px;
+    display: block;
+    float: left;
+}
+@media all and (max-width:1760px){
+	.mv_left,
+	.main_slide_item{width: 980px;}
+}
+@media all and (max-width:1440px){
+	.sub #contain{width:1024px;}
+	.sub #contents{width: 724px;padding-right: 20px;}
+	.list_url{width: 260px;height: 220px;}
+	#searchList li{height: 220px;}
+	#searchList .post_thumb_content{margin-left: 280px;}
+	.entryhide #sidebar{width: 300px;}
+	.entryhide #sidebar .side_img{height: 280px;}
+}
+@media all and (max-width:1024px){
+	.sub #contain{width:768px;overflow: hidden;}
+	.sub #contents{width: 100%;padding-right: 0;}
+	.entryhide #sidebar,
+	.sub #sidebar{width: 100%;overflow: hidden}
+}
+.gnbtit{
+	font-weight:bold;
+}
+
+body { margin: 0; }
+.menu-bar {
+  display: inline-block;
+  width: 100%;
+}
+.menu { margin: 0; padding: 0; }
+.menu li {
+  float: left;
+  list-style:none;
+  position: relative;
+}
+.menu li:hover { }
+.menu li.expand { background: white; }
+.menu li.expand>a { }
+.menu a {
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.menu ul {
+  background: #eee;
+  border: 1px solid silver;
+  display: none;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 180px;
+}
+.menu ul li { float: none; }
+.menu ul li.expand { background: #ddd; }
+.menu ul li.expand a { color: black; }
+.menu ul a { color: black; }
+.menu ul ul { left: 100%; top: 0; }

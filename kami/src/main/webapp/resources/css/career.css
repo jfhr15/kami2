@@ -1,0 +1,70 @@
+@charset "UTF-8";
+#content-wrapper{
+	width: 100%;
+}
+#insertBtn{
+	color: #ffffff;
+    background-color: #a6c4b4;
+    border-color: transparent;
+    margin-left: 80%;
+    margin-right: 2%;
+    margin-top: 1%;
+}
+#careerList{
+	border: 2px solid #ccc;
+	text-align: center;
+}
+#col{
+	width: 100%;
+}
+#care_content{
+	width: 60%;
+	margin-right: 5%;
+}
+#care_date{
+	width: 35%;
+	font-size: 80%;
+}  
+#care_content2{
+	width: 60%;
+	margin-right: 5%;
+}
+#care_date2{
+	width: 35%;
+	font-size: 80%;
+}  
+.modal-dialog{
+	vertical-align: middle;
+}
+.modal-dialog{
+	top: 50%;
+  margin-top: -21%;
+}
+.th{
+	text-align: center;
+	border: 2px solid #ccc;
+	font: bolder;
+}
+#listTable tr{
+	border: 2px solid #ccc;
+}
+#listTable td{
+	border: 2px solid #ccc;
+}
+#listTable{
+	width: 100%;
+	font-size: 15px;
+}
+.td1{
+	width: 10%;
+	text-align: right;
+}
+.td2{
+	width: 75%;
+}
+.td3{
+	width: 15%;
+}
+#tt{
+	text-align: center;
+}

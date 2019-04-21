@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.ProductMapper">
+
+<!-- 상품종류 전체목록 출력 -->
+<select id="selectproductkind" resultType="Productkind">
+	select
+		kindseq
+		, productkind
+	from
+		productkind
+	
+</select>
+
+
+<!-- 상품종류 등록 -->
+<insert id="insertproductkind" parameterType="Productkind">
+	insert into productkind
+		(kindseq
+		, productkind)
+	values
+		(kindseq.nextval
+		, #{productkind})
+</insert>
+
+
+<!-- 상품종류 삭제 -->
+<delete id="deleteproductkind" parameterType="Productkind">
+	delete from
+		productkind
+	where
+		kindseq = #{kindseq}
+</delete>
+
+
+<!-- 상품 전체출력 및 검색출력 수정필요 -->
+<select id="selectProduct" resultType="Product">
+	select
+		productseq
+		, kindseq
+		, prd_name
+		, prd_price1
+		, prd_price2
+		, prd_content
+		, prd_savfile
+		, prd_ognfile
+		, prd_quantity
+		, prd_indate
+	from
+		product
+	<if test="kindseq !=null">
+	where
+		kindseq=#{kindseq}
+	</if>
+</select>
+
+
+<!-- 상품등록 -->
+<insert id="insertProduct" parameterType="Product">
+	insert into product
+		(
+		productseq
+		, kindseq
+		, prd_name
+		, prd_price1
+		, prd_price2
+		, prd_content
+		, prd_savfile
+		, prd_ognfile
+		, prd_quantity
+		, prd_indate
+		)
+	values
+		(
+		productseq.nextval
+		, #{kindseq}
+		, #{prd_name}
+		, #{prd_price1}
+		, #{prd_price2}
+		, #{prd_content}
+		, sysdate
+		, #{prd_ognfile}
+		, #{prd_quantity}
+		, sysdate
+		)
+</insert>
+
+
+<!-- 상품수정 -->
+<update id="updateProduct" parameterType="Product">
+	update
+		product
+	set
+		prd_name = #{prd_name}
+		, prd_price1 =#{prd_price1}
+		, prd_price2 = #{prd_price2}
+		, prd_content =#{prd_content}
+		, prd_quantity =#{prd_quantity}
+		, prd_ognfile =#{prd_ognfile}
+	where
+		productseq = #{productseq}
+
+</update>
+
+<!-- 하나의 상품만 검색 -->
+<select id="selectOneProduct" resultType="Product" parameterType="int">
+	select
+		productseq
+		, kindseq
+		, prd_name
+		, prd_price1
+		, prd_price2
+		, prd_content
+		, prd_savfile
+		, prd_ognfile
+		, prd_quantity
+		, prd_indate
+	from
+		product
+	where
+		productseq = #{productseq}
+</select>
+
+
+
+
+
+
+</mapper>
+

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+label, input, button, img  {vertical-align:middle;}
+input, button{margin:0; padding: 0;font-size: 1em;}
+botton{cursor: pointer;}
+
+body{line-height: 1.5; font-size: 14px; }
+tr{height: 60px;}
+th{width: 120px;}
+.conwrap{position: relative; padding: 40px 0;}
+span{padding: 0 0 5px; line-height: 1.4em; font-size: 10px;}
+.container{position: relative; width: 750px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px;}\
+.btn_input{border-radius:3px;}
+.srcSize{   width: 300px;
+    		height: 300px;
+    		float: left;
+    		}
+
+
+

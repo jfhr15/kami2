@@ -1,0 +1,65 @@
+@charset "UTF-8";
+.br{
+	width: 100%;
+}
+@charset "UTF-8";
+div#wrapper{
+		width : 800px;
+		margin : 0 auto;
+	}
+	div#wrapper>h2 {
+		text-align : center;
+	}
+	div#wrapper table {
+		margin:0 auto;
+		width : 800px;
+	}
+	th {
+		width: 100px;
+	}
+	pre {
+		height : 200px;
+		overflow: auto;
+		margin: 0;
+	}
+	table.reply {
+		width : 800px;
+	}
+	input[name='text'] {
+		width : 600px;
+	}
+	span {
+		display: inline-block;
+
+		margin : 5px;
+	}
+	td.replycontent {
+		width : auto;
+	}
+	td.replytext {
+		width : 600px;
+		text-align : left;
+	}
+	td.replysub {
+		width : 80px;
+		text-align : right;
+	}
+	td.replybtn{
+		width : 100px;
+		text-align : right;
+	}
+.br1{
+	height: 195px;
+	width: 100%;
+}
+.btn {
+	text-align : center;
+	border-radius : 0.5em;
+	margin-bottom : 10px;
+	padding : 5px;
+	background : #eee;
+}
+#reg{
+	text-align: right;
+	margin-top: 1%;
+}

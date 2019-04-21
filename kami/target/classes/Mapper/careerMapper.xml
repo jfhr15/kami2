@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.CareerMapper">
+	
+	<insert id="insertCareer" parameterType="Career">
+		insert into Career(
+			careeaseq
+		    ,emp_id
+		    ,care_date
+		    ,care_content
+		) values(
+			careeaseq.nextval
+			,#{emp_id}
+			,#{care_date}
+			,#{care_content}
+		)
+	</insert>
+	
+	<select id="careerList" resultType="Career" parameterType="String">
+		select 
+			careeaseq
+		    ,emp_id
+		    ,to_char(care_date,'YYYY-MM-DD') as care_date
+		    ,care_content
+		from
+			career
+		where
+			emp_id=#{emp_id}
+	</select>
+	
+	<update id="updateCareer" parameterType="Career">
+		update 
+			career
+		set
+			care_date=#{care_date},
+			care_content=#{care_content}
+		where
+			careeaseq=#{careeaseq}
+	</update>
+	
+	<select id="selectCareer" resultType="Career" parameterType="Integer">
+		select 
+			careeaseq
+		    ,emp_id
+		    ,to_char(care_date,'YYYY-MM-DD') as care_date
+		    ,care_content
+		from
+			career
+		where
+			careeaseq=#{careeaseq}
+	</select>
+	
+	<delete id="deleteCareer" parameterType="Integer">
+		delete from
+			career
+		where
+			careeaseq=#{careeaseq}
+	</delete>
+	
+</mapper>

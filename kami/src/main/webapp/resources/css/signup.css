@@ -1,0 +1,78 @@
+@charset "UTF-8";
+.bolder{
+	font-weight: bolder;
+}
+.selectGenderTable{
+	margin-left: 6%;
+	text-align: auto;
+}
+.radio1{
+	font-size: 17px;
+    width: 17px;
+    height: 17px;
+    margin-top: 10px;
+}
+table{
+	width: 100%;
+}
+.btnTable{
+	margin-left: 5%;
+}
+.tdtd{
+	width: 45%;
+}
+.btns{
+	width: 75%;
+}
+.check{
+	color:red;
+}
+#name_check{
+	color:red;
+}
+#birth_check{
+	color:red;
+}
+#addbtn{
+	margin-top:25px;
+	width: 77%;
+}
+.addresstable{
+	width:93%;
+}
+.addresstable td{
+	padding-left:5%;
+}
+.addtable td{
+	padding-left:5%;
+}
+.contain{
+	background: #ddd;
+	margin-left: 30%;
+	margin-right: 22%;
+	margin-top: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	line-height: 1.8em;
+	background-color: rgba( 255, 255, 255, 0.85 );
+}
+#cont{
+	width: -webkit-fill-available;
+    height: -webkit-fill-available;
+	background-image: url('../img/hairshop.jpg');
+	background-size: cover;
+	padding-top: 1%;
+}
+.td1{
+	padding-left: 5%;
+	width:25%;
+}
+.td2{
+	padding-right: 7%;
+	width:63%;
+}
+.mb-4{
+	text-align: center;
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.ProcedureMapper">
+
+
+
+<!-- 시술등록 -->
+<insert id="insertProcedure" parameterType="Procedure">
+	insert into procedure
+		(
+		PROCEDURESEQ
+		,PCD_NAME
+		,PCD_SETTING
+		,PCD_TIME
+		,PCD_PRICE
+		,PCD_ORGFILE
+		,PCD_SAVFILE
+		)
+	values
+		(
+		PROCEDURESEQ.nextval
+		, #{pcd_name}
+		, #{pcd_setting}
+		, #{pcd_time}
+		, #{pcd_price}
+		, #{pcd_orgfile}
+		, #{pcd_savfile}
+		)
+</insert>
+
+<!-- 사진등록 -->
+<insert id="insertPicture" parameterType="Picture">
+	insert into picture
+		(
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+		)
+	values
+		(
+		PICTURESEQ.nextval
+		, #{name}
+		, #{setting}
+		, #{hashtag} 
+		, #{condition}
+		, #{savfile}
+		, #{orgfile}
+		)
+</insert>
+
+<select id="pickmeSelect" parameterType="Condition" resultType="Picture">
+	SELECT 
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+	FROM PICTURE
+	WHERE 
+		SETTING like '%'|| #{gender} ||'%' and
+		CONDITION like '%'|| #{conditionM} ||'%' and
+		CONDITION like '%'|| #{conditionG} ||'%' and
+		CONDITION like '%'|| #{conditionH} ||'%' and
+		CONDITION like '%'|| #{conditionD} ||'%' and
+		CONDITION like '%'|| #{conditionF} ||'%' 
+
+</select>
+
+<select id="genderSelect" parameterType="String" resultType="String">
+	SELECT GENDER FROM IDINFO
+	WHERE ID = #{id}
+
+</select>
+<select id="conditionSelect" parameterType="String" resultType="String">
+	SELECT MEM_CONDITION FROM MEMBER
+	WHERE MEM_ID = #{id}
+
+</select>
+
+<!-- 비로그인시나 회원일때 사진 불러오기-->
+<select id="PictureSelect" resultType="Picture">
+	SELECT 
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+	FROM
+		PICTURE
+    order by PICTURESEQ desc
+</select>
+</mapper>
+

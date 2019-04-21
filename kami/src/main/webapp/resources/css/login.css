@@ -1,0 +1,86 @@
+@charset "UTF-8";
+#idPopupTable{
+	width:100%;
+}
+#pwPopupTable{
+	width:100%;
+}
+.popup_text{
+	width:40%;
+	text-align: end;
+}
+.popup_btn{
+	margin-left: 45%;
+}
+#idTableForm{
+    margin-top: 20%;
+}
+#pwTableForm{
+	margin-top: 20%;
+}
+#popupHeader{
+	margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+.headerA{
+	display: inline-block;
+}
+.headerLi{
+	list-style-type : none;
+	border : 0;
+	float: left;
+}
+#clBtnId{
+	margin-left: 30%;
+	margin-right:1%;
+}
+#clBtnPw{
+	margin-left: 30%;
+	margin-right:1%;
+}
+#searchResult{
+	margin-left: 40%;
+}
+#head{
+	font-weight: bold;
+}
+#searchText{
+	margin-left: 10%;
+    margin-top: 8%;
+}
+.contain{
+	text-align: center;
+	margin-left:30%; 
+	margin-right:30%;
+	margin-top:8%;
+	background: #ddd;
+	background-color: rgba( 255, 255, 255, 0.85 );
+}
+.h4.text-gray-900.mb-4{
+	margin-right: 30%;
+    margin-bottom: 3%;
+}
+#opt{
+	padding-top: 3%;
+}
+.form-group{
+	padding-bottom: 1%;
+}
+.p-5{
+	padding-top: 2%;
+	padding-bottom: 3%;
+}
+a{
+	text-decoration: none;
+}
+#cont{
+	width: -webkit-fill-available;
+    height: -webkit-fill-available;
+	background-image: url('../img/hairshop.jpg');
+	background-size: cover;
+	padding-top: 1%;
+}
+.smalls{
+	font-size: 100%;
+}

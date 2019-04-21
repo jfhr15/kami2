@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.OffScheduleMapper">
+	<insert id="insertOff" parameterType="off">
+		insert into offSchedule(
+		    off_scheduleseq
+			,emp_id
+			,off_startdate
+			,off_enddate
+		) values(
+			off_scheduleseq.nextval
+			,#{emp_id}
+			,TO_DATE(#{off_startdate},'YYYY-MM-DD HH24:MI')
+			,TO_DATE(#{off_enddate},'YYYY-MM-DD HH24:MI')
+		)
+	</insert>
+
+	<select id="selectOff" resultType="off" parameterType="map">
+		select
+			off_scheduleseq,
+			emp_id,
+			TO_CHAR(off_startdate, 'YYYY-MM-DD HH24:MI') as off_startdate,
+			TO_CHAR(off_enddate, 'YYYY-MM-DD HH24:MI') as off_enddate,
+			off_check
+	 	from 
+	 		offSchedule 
+	 	where
+	 		off_check=#{off_check}
+	 	<if test="emp_id != 'bbb'">
+	 	and
+	 		emp_id=#{emp_id}
+	 	</if>
+	</select>
+	
+	<delete id="deleteOff" parameterType="map"> 
+		delete from
+			offSchedule
+		where
+			off_scheduleseq=#{off_scheduleseq}
+	</delete>
+	
+	<select id="selectOffOne" resultType="off" parameterType="Integer">
+		select
+			off_scheduleseq,
+			emp_id,
+			TO_CHAR(off_startdate, 'YYYY-MM-DD HH24:MI') as off_startdate,
+			TO_CHAR(off_enddate, 'YYYY-MM-DD HH24:MI') as off_enddate,
+			off_check as offCheck
+	 	from 
+	 		offSchedule 
+	 	where
+	 		off_scheduleseq=#{off_scheduleseq}
+	</select>
+	
+	<update id="updateOff" parameterType="off">
+		update 
+			offSchedule
+		set
+			off_startdate=TO_DATE(#{off_startdate},'YYYY-MM-DD HH24:MI')
+			,off_enddate=TO_DATE(#{off_enddate},'YYYY-MM-DD HH24:MI')
+		where
+			off_scheduleseq=#{off_scheduleseq}
+	</update>
+	
+	<update id="updateOffCheck" parameterType="map">
+		update 
+			offSchedule
+		set
+			off_check=#{off_check}
+		where
+			off_scheduleseq=#{off_scheduleseq}
+	</update>
+</mapper>

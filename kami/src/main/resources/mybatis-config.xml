@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	 <typeAliases>
+		<typeAlias type="com.kami.kami.vo.Board" alias="Board" />
+		<typeAlias type="com.kami.kami.vo.Career" alias="Career" />
+		<typeAlias type="com.kami.kami.vo.Chat" alias="Chat" />
+		<typeAlias type="com.kami.kami.vo.Employee" alias="Employee" />
+		<typeAlias type="com.kami.kami.vo.Haircolor" alias="Haircolor" />
+		<typeAlias type="com.kami.kami.vo.Idinfo" alias="Idinfo" />
+		<typeAlias type="com.kami.kami.vo.Member" alias="Member" />
+		<typeAlias type="com.kami.kami.vo.Notice" alias="Notice" />
+		<typeAlias type="com.kami.kami.vo.Offschedule" alias="off" />
+		<typeAlias type="com.kami.kami.vo.Orders" alias="Orders" />
+		<typeAlias type="com.kami.kami.vo.Payment" alias="Payment" />
+		<typeAlias type="com.kami.kami.vo.Position" alias="Position" />
+		<typeAlias type="com.kami.kami.vo.Procedure" alias="Procedure" />
+		<typeAlias type="com.kami.kami.vo.Procedureinfomation" alias="Procedureinfomation" />
+		<typeAlias type="com.kami.kami.vo.Product" alias="Product" />
+		<typeAlias type="com.kami.kami.vo.Productkind" alias="Productkind" />
+		<typeAlias type="com.kami.kami.vo.Refund" alias="Refund" />
+		<typeAlias type="com.kami.kami.vo.Reservation" alias="Res" />
+		<typeAlias type="com.kami.kami.vo.Review" alias="Review" />
+		<typeAlias type="com.kami.kami.vo.Schedule" alias="Schedule" />
+		<typeAlias type="com.kami.kami.vo.Supply" alias="Supply" />
+		<typeAlias type="com.kami.kami.vo.Chartbar" alias="Chartbar" />
+		<typeAlias type="com.kami.kami.vo.Chartpie" alias="Chartpie" />
+		<typeAlias type="com.kami.kami.vo.Chartarea" alias="Chartarea" />
+		<typeAlias type="com.kami.kami.vo.Picture" alias="Picture" />
+			<typeAlias type="com.kami.kami.vo.Condition" alias="Condition" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="Mapper/adminMapper.xml" />
+		<mapper resource="Mapper/productMapper.xml" />
+		<mapper resource="Mapper/chartMapper.xml" />
+		<mapper resource="Mapper/reservationMapper.xml" />
+		<mapper resource="Mapper/managementMapper.xml" />
+		<mapper resource="Mapper/offscheduleMapper.xml" />
+		<mapper resource="Mapper/procedureMapper.xml" />
+		<mapper resource="Mapper/careerMapper.xml" />
+		<mapper resource="Mapper/boardMapper.xml" />
+	</mappers> 
+</configuration>

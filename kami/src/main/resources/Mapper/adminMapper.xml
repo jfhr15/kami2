@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.AdminMapper">
+
+	<insert id="insertEmployee" parameterType="Employee">
+		INSERT INTO EMPLOYEE
+		(
+			POSITIONSEQ
+			,EMP_ID
+			,EMP_HIREDATE
+			,emp_flag
+		)
+		VALUES
+		(
+			1
+			,(select id from idinfo where id=#{emp_id})
+			,sysdate
+			,1
+		)
+	</insert>
+	
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER
+		(
+			mem_id
+			,mem_money
+			,mem_registDate
+			,mem_flag
+		)
+		VALUES
+		(
+			(select id from idinfo where id=#{mem_id})
+			,0
+			,sysdate
+			,1
+		)
+	</insert>
+	
+	<insert id="insertIdinfo" parameterType="Idinfo">
+		INSERT INTO IDINFO
+		(
+			ID
+			,PW
+			, name
+     		,phone
+     		,address
+     		,birthday
+    		,gender
+    		,email
+			,TYPE
+		)
+		VALUES
+		(
+			#{id}
+			,#{pw}
+			,#{name}
+			,#{phone}
+			,#{address}
+			,#{birthday}
+			,#{gender}
+			,#{email}
+			,#{type}
+		)
+	</insert>
+	
+	<select id="selectId" resultType="Idinfo">
+		SELECT
+			ID
+		FROM
+			IDINFO
+	</select>
+	
+	<select id="selectEmployee" parameterType="HashMap" resultType="HashMap">
+		SELECT
+			EMPLOYEE.EMPLOYEEID,
+			EMPLOYEE.POSITIONSEQ,
+			EMPLOYEE.HIREDATE,
+			EMPLOYEE.FIREDATE,
+			EMPLOYEE.flag
+		FROM 
+			EMPLOYEE,idinfo
+		WHERE
+			EMPLOYEE.EMPLOYEEID=#{employeeId}
+		AND
+			idinfo.PASSWORD=#{password}
+	</select>
+	
+	
+		
+	<select id="login" parameterType="Idinfo" resultType="Idinfo">
+		SELECT
+			ID
+			,PW
+			,TYPE
+		FROM 
+			IDINFO
+		WHERE
+			ID=#{id}
+		AND
+			PW=#{pw}
+	</select>
+	
+	<select id="idSearch" parameterType="HashMap" resultType="Idinfo">
+		select
+			id
+		from
+			idinfo
+		where
+			name=#{name}
+		and
+			phone=#{phone}
+		and
+			email=#{email}
+	</select>
+	
+	<select id="pwSearch" parameterType="HashMap" resultType="Idinfo">
+		select
+			pw
+		from
+			idinfo
+		where
+			id=#{id}
+		and
+			phone=#{phone}
+		and
+			email=#{email}
+	</select>
+	
+	<select id="memberTypeCheck" resultType="Member" parameterType="String">
+		select
+			mem_flag
+		from
+			member
+		where
+			mem_id=#{id}
+	</select>
+	
+	<select id="employeeTypeCheck" resultType="Employee" parameterType="String">
+		select
+			positionseq
+		from
+			employee
+		where
+			emp_id=#{id}
+	</select>
+</mapper>

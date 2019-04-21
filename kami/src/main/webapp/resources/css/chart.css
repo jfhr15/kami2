@@ -1,0 +1,86 @@
+@charset "UTF-8";
+#accordionSidebar{
+	margin-top: 6%;
+}
+#calendar {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#loading {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.fc-day-top.fc-sat {
+	color: #0000FF;
+} /*토요일*/
+.fc-day-top.fc-sun {
+	color: #FF0000;
+} /*일요일*/
+.fc-day-header.fc-widget-header.fc-sat {
+	color: #0000FF;
+} /* 토요일 글자 */
+.fc-day-header.fc-widget-header.fc-sun {
+	color: #FF0000;
+} /* 일요일 글자 */
+
+.bar{
+	width: 100%;
+	display: table;
+}
+.bar1 {
+	width: 100%;
+	display: table-cell;
+	float: center;
+}
+.table1{
+	margin-left: auto; 
+	margin-right: auto;
+}
+.bar2 {
+	float: left;
+	margin: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: #FF0000;
+	color: #FFFFFF;
+}
+
+.bar3 {
+	float: left;
+	margin: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: #5fd14b;
+	color: #FFFFFF;
+}
+
+.bar4 {
+	float: left;
+	margin: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: #4b68d1;
+	color: #FFFFFF;
+}
+#eventDate{
+	color: #FFFFFF;
+}
+.modal-header{
+	color: #FFFFFF;
+}

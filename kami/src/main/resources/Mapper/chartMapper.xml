@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.ChartMapper">
+	
+	<select id="barChartList" parameterType="String" resultType="Chartbar">
+	
+	select distinct idinfo.ID, idinfo.name, (select sum(rsv_totalprice) from reservation where emp_id=idinfo.id) as rsv_totalprice
+	from idinfo, reservation
+	where idinfo.id = reservation.emp_id
+    and
+    (reservation.RSV_DATE between to_date(#{parameter},'yyyymm') and add_months(to_date(#{parameter},'yyyymm'),1))
+	ORDER by rsv_totalprice desc
+	</select> 
+	
+	
+	<select id="pieChartList" parameterType="String" resultType="Chartpie">
+	
+	select (select pcd_name from procedure where procedureseq = pro) as name ,count(*)as count from (select PROCEDUREINFORMATION.PROCEDURESEQ as pro, PROCEDUREINFORMATION.RESERVATIONSEQ from PROCEDUREINFORMATION  where RESERVATIONSEQ in
+	(select distinct(reservation.reservationseq) from reservation where emp_id=#{parameter})) group by pro
+	
+	</select>
+	
+	<select id="areaChartList" parameterType="String" resultType="Chartarea">
+	
+	select
+	sum(RSV_TOTALPRICE) as RSV_TOTALPRICE, to_char(rsv_date,'yy/MM')as rsv_date
+	from
+	reservation
+	where emp_id=#{parameter}
+	group by
+	to_char(rsv_date,'yy/MM')
+	order by  rsv_date
+	
+	</select>
+	
+</mapper>

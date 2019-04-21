@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.ManagementMapper">
+	
+	<insert id="insertProcedure" parameterType="Procedure">
+		insert into Procedure(
+			procedureseq
+		    ,pcd_name
+		    ,pcd_time
+		    ,pcd_price
+		) values(
+			procedureseq.nextval
+			,#{pcd_name}
+			,#{pcd_time}
+			,#{pcd_price}
+		)
+	</insert>
+	
+	<select id="selectProcedure" resultType="Procedure">
+		select
+			procedureseq
+		    ,pcd_name
+		    ,pcd_time
+		    ,pcd_price
+		from
+			Procedure
+	</select>
+</mapper>
+
