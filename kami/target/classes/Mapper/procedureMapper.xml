@@ -85,6 +85,10 @@
 	WHERE MEM_ID = #{id}
 
 </select>
+<select id="typeSelect" parameterType="String" resultType="Int">
+	SELECT type FROM idinfo
+	WHERE ID = #{id}
+</select>
 
 <!-- 비로그인시나 회원일때 사진 불러오기-->
 <select id="PictureSelect" resultType="Picture">
@@ -115,5 +119,7 @@
 	where
 		PICTURESEQ=#{PICTURESEQ}
 </select>
+
+
 </mapper>
 

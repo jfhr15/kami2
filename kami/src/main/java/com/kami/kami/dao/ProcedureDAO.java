@@ -78,6 +78,13 @@ public class ProcedureDAO {
 			
 			return result;
 		}
+		public int typeSelect(String id) {
+			int result = 0;
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			result = mapper.typeSelect(id);
+			return result;
+		}
+		
 		
 		//사진값 다받아버리기
 		public ArrayList<Picture> PictureSelect(){
