@@ -99,4 +99,11 @@ public class ProcedureDAO {
 			return result2;	
 		}
 		
+		public Picture PictureSelectOne(int pictureSeq) {
+			Picture picture = new Picture();
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			picture = mapper.PictureSelectOne(pictureSeq);
+			
+			return picture;
+		}
 }

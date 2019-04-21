@@ -100,5 +100,20 @@
 		PICTURE
     order by PICTURESEQ desc
 </select>
+
+<select id="PictureSelectOne" resultType="Picture" parameterType="Integer">
+	SELECT 
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+	FROM
+		PICTURE
+	where
+		PICTURESEQ=#{PICTURESEQ}
+</select>
 </mapper>
 

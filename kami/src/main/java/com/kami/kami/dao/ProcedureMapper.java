@@ -19,4 +19,5 @@ public interface ProcedureMapper {
 	public String conditionSelect(String id);
 	//사진값 다받아버리기
 	public ArrayList<Picture> PictureSelect();
+	public Picture PictureSelectOne(int pictureSeq);
 }

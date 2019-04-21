@@ -1,0 +1,57 @@
+@charset "UTF-8";
+.picTop{
+	margin-left: 5%;
+	margin-bottom: 2%;
+	font-weight: bolder;
+	font-size: x-large;
+}
+.topA{
+	border-bottom: 2px solid #333;
+}
+.imgA{
+	display: block;
+	margin: 3% auto;
+	border-bottom: 1px solid #ccc;
+}
+.picA{
+	text-align: center;
+}
+.btnA{
+	background:#212529;
+	color:#fff;
+	border:none;
+	position:relative;
+	font-size:1.6em;
+	padding:0.5em 2em;
+	cursor:pointer;
+	transition:800ms ease all;
+	outline:none;
+}
+.bA{
+	text-align: center;
+}
+.btnA:hover{
+	background:#fff;
+	color:#1AAB8A;
+}
+.btnA:before,.btnA:after{
+	content:'';
+	position:absolute;
+	top:0;
+	right:0;
+	height:2px;
+	width:0;
+	background: #1AAB8A;
+	transition:400ms ease all;
+}
+.btnA:after{
+	right:inherit;
+	top:inherit;
+	left:0;
+ 	bottom:0;
+}
+.btnA:hover:before,.btnA:hover:after{
+	width:100%;
+	transition:800ms ease all;
+}
+

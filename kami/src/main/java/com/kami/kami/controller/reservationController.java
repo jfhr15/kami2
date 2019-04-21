@@ -43,9 +43,10 @@ public class reservationController {
 	public @ResponseBody String insertRes(Reservation res, HttpSession session, int pcd) {
 		res.setMem_id((String)session.getAttribute("loginId"));
 		
-		rDao.selectProcedureOne(pcd);
+		Procedure p = rDao.selectProcedureOne(pcd);
 		
-		res.setRsv_time("2:00");
+		res.setRsv_time(p.getPcd_time());
+		
 		rDao.insertRes(res);
 		
 		return "success";
