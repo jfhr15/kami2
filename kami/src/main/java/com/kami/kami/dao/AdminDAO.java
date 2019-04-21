@@ -137,4 +137,16 @@ public class AdminDAO {
 		}
 		return employee;
 	}
+	
+	public Idinfo SearchIDforPayment(String id) {
+		Idinfo result= null;
+		try {
+			AdminMapper mapper = session.getMapper(AdminMapper.class);
+			result = mapper.SearchIDforPayment(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return result;
+		}
+		return result;
+	}
 }

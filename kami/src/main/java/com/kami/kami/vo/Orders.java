@@ -1,7 +1,7 @@
 package com.kami.kami.vo;
 
 public class Orders {
-
+	private String paymentNum; //결제번호
 	private int billseq; //주문번호
 	private int productseq; //상품번호
 	private String mem_id; //구입한 회원
@@ -9,6 +9,15 @@ public class Orders {
 	private String ord_date; //구입날짜
 	private String ord_quantity; //구입수량
 	private String ord_status; //주문상태
+	
+	
+	
+	public String getPaymentNum() {
+		return paymentNum;
+	}
+	public void setPaymentNum(String paymentNum) {
+		this.paymentNum = paymentNum;
+	}
 	public int getBillseq() {
 		return billseq;
 	}
@@ -51,9 +60,20 @@ public class Orders {
 	public void setOrd_status(String ord_status) {
 		this.ord_status = ord_status;
 	}
-	public Orders(int billseq, int productseq, String mem_id, String ord_amount, String ord_date, String ord_quantity,
-			String ord_status) {
+	@Override
+	public String toString() {
+		return "Orders [paymentNum=" + paymentNum + ", billseq=" + billseq + ", productseq=" + productseq + ", mem_id="
+				+ mem_id + ", ord_amount=" + ord_amount + ", ord_date=" + ord_date + ", ord_quantity=" + ord_quantity
+				+ ", ord_status=" + ord_status + "]";
+	}
+	public Orders() {
 		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Orders(String paymentNum, int billseq, int productseq, String mem_id, String ord_amount, String ord_date,
+			String ord_quantity, String ord_status) {
+		super();
+		this.paymentNum = paymentNum;
 		this.billseq = billseq;
 		this.productseq = productseq;
 		this.mem_id = mem_id;
@@ -62,16 +82,8 @@ public class Orders {
 		this.ord_quantity = ord_quantity;
 		this.ord_status = ord_status;
 	}
-	public Orders() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public String toString() {
-		return "Orders [billseq=" + billseq + ", productseq=" + productseq + ", mem_id=" + mem_id + ", ord_amount="
-				+ ord_amount + ", ord_date=" + ord_date + ", ord_quantity=" + ord_quantity + ", ord_status="
-				+ ord_status + "]";
-	}
+	
+	
 	
 	
 }

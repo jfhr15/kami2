@@ -146,4 +146,25 @@
 		where
 			emp_id=#{id}
 	</select>
+	
+	
+	
+	<!-- 결제를 위한 회원정보 조회 : 황의선 -->
+	<select id="SearchIDforPayment" parameterType="String" resultType="Idinfo">
+		select
+			ID
+			,PW
+			, name
+     		,phone
+     		,address
+     		,birthday
+    		,gender
+    		,email
+			,TYPE
+		from
+			idinfo
+		where
+			id=#{id}
+	</select>
+	
 </mapper>
