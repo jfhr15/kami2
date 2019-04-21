@@ -19,4 +19,6 @@ public interface AdminMapper {
 	public Idinfo pwSearch(HashMap<Object,Object> map);
 	public Member memberTypeCheck(String id);
 	public Employee employeeTypeCheck(String id);
+
+	public Idinfo SearchIDforPayment(String id);
 }

@@ -34,6 +34,7 @@
 	<mappers>
 		<mapper resource="Mapper/adminMapper.xml" />
 		<mapper resource="Mapper/productMapper.xml" />
+		<mapper resource="Mapper/paymentMapper.xml" />
 		<mapper resource="Mapper/chartMapper.xml" />
 		<mapper resource="Mapper/reservationMapper.xml" />
 		<mapper resource="Mapper/managementMapper.xml" />

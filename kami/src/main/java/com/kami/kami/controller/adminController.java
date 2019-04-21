@@ -69,6 +69,14 @@ public class adminController {
 		return "admin/index5";
 	}
 	
+
+	
+	@RequestMapping(value = "/goIndex6", method = RequestMethod.GET)
+	public String goIndex6() {
+		
+		return "admin/index6";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Idinfo idinfo ,HttpSession session, Model model) {
 		Idinfo result = dao.login(idinfo);

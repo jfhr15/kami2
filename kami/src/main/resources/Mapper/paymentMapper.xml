@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.PaymentMapper">
+
+
+	<!-- 결제정보 입력 -->
+	<insert id="insertPayment" parameterType="Payment">
+	<![CDATA[
+	INSERT INTO PAYMENT
+		(
+		PAYMENTNUM
+		,ISSUCESS
+		,MEANSOFPAYMENT
+		,RESULTCODE
+		,TOTPRICE
+		,INDATE
+		,RECEIPT_URL
+		)
+	VALUES
+		(
+		#{paymentNum},
+		#{issucess},
+		#{meansofpayment},
+		#{resultcode},
+		#{totprice},
+		to_date(#{indate},'yyyy/mm/dd hh24:mi:ss'),
+		#{receipt_url}
+		)
+	]]>
+	</insert>	
+	
+	
+	<!-- 모든 결제정보 출력 -->
+	<select id="selectAllPayment" resultType="Payment">
+	select
+		PAYMENTNUM
+		,ISSUCESS
+		,MEANSOFPAYMENT
+		,RESULTCODE
+		,TOTPRICE
+		,INDATE
+		,RECEIPT_URL
+	from
+		payment
+	</select>
+	
+	
+	
+	<!-- 물건 구입 정보 입력 -->
+	<insert id="insertOrders" parameterType="Orders">
+	insert into orders
+		(
+		paymentnum
+		, billseq
+		, productseq
+		, mem_id
+		, ord_amount
+		, ord_date
+		, ord_quantity
+		, ord_status
+		)
+	values (
+		#{paymentNum}
+		, billseq.nextval
+		, #{productseq}
+		, #{mem_id}
+		, #{ord_amount}
+		, sysdate
+		, #{ord_quantity}
+		, #{ord_status}
+		)
+	</insert>
+	
+	
+	<!-- 모든 주문 정보 조회 -->
+	<select id="selectAllOrders" resultType="Orders">
+	select
+		billseq
+		, productseq
+		, mem_id
+		, ord_amount
+		, ord_date
+		, ord_quantity
+		, ord_status
+	from
+		orders
+	</select>
+	
+	<!-- 회원 한명의 주문 정보 조회 -->
+	<select id="selectOrders" resultType="HashMap" parameterType="String">
+	select
+		a.billseq as billseq
+		, c.prd_name as prd_name
+		, a.ord_amount as ord_amount
+		, a.ord_date as ord_date
+		, a.ord_quantity as ord_quantity
+		, b.receipt_url as receipt_url
+	from
+		orders a, payment b, product c
+	where
+		a.productseq = c.productseq
+		and
+		a.paymentnum = b.paymentnum
+	</select>
+	
+	
+</mapper>
