@@ -169,12 +169,15 @@ $(function() {
 	function insert() {
 		var start = $("#hStart").val();
 		var emp_id = $("#emp_id").val();
+		var pcd = $("#pcd").val();
+		
 		if (flag == 0) {
 			$.ajax({
 				url : 'insertRes',
 				data : {
 					rsv_date : start,
-					emp_id : emp_id
+					emp_id : emp_id,
+					pcd : pcd
 				},
 				type : 'post',
 				success : function() {

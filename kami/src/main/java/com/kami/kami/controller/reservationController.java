@@ -40,8 +40,11 @@ public class reservationController {
 	}
 	
 	@RequestMapping(value = "/insertRes", method = RequestMethod.POST)
-	public @ResponseBody String insertRes(Reservation res, HttpSession session) {
+	public @ResponseBody String insertRes(Reservation res, HttpSession session, int pcd) {
 		res.setMem_id((String)session.getAttribute("loginId"));
+		
+		rDao.selectProcedureOne(pcd);
+		
 		res.setRsv_time("2:00");
 		rDao.insertRes(res);
 		
