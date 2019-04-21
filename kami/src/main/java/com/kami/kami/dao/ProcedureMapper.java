@@ -17,6 +17,7 @@ public interface ProcedureMapper {
 	//ID의 머리상태 조사
 	public String genderSelect(String id);
 	public String conditionSelect(String id);
+	public int typeSelect(String id);
 	//사진값 다받아버리기
 	public ArrayList<Picture> PictureSelect();
 }

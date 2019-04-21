@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kami.kami.dao.ProcedureDAO;
+import com.kami.kami.vo.Condition;
 import com.kami.kami.vo.Picture;
 
 
@@ -35,10 +36,26 @@ public class HomeController {
 		String id= (String)session.getAttribute("loginId");
 		ArrayList<Picture> list = new ArrayList<Picture>();
 		list = dao.PictureSelect();
-		
 		if(id==null) {
 			model.addAttribute("picture", list);
+			
+			return "home";
 		}
+		
+		int type = dao.typeSelect(id);
+		
+		if(type==1) {
+			 String gender = dao.genderSelect(id);
+		     String org_condition = dao.conditionSelect(id);
+		     Condition condition = chageCondition(gender, org_condition); 
+		     list = dao.pickmeSelect(condition);
+		     model.addAttribute("picture", list);
+			
+			
+		}else {
+			model.addAttribute("picture", list);
+		}
+		
 		
 		return "home";
 	}
@@ -52,4 +69,20 @@ public class HomeController {
 	public String goAbout() {
 		return "about";
 	}
+	
+	  //condition 설정
+	 public Condition chageCondition(String gender, String condition) {
+		 Condition result = new Condition();
+		 result.setGender(gender);	
+		 
+		 String[] arrayCondition = condition.split("/");
+		 result.setConditionM(arrayCondition[0]);
+		 result.setConditionG(arrayCondition[1]);
+		 result.setConditionH(arrayCondition[2]);
+		 result.setConditionD(arrayCondition[3]);
+		 result.setConditionF(arrayCondition[4]);
+		 
+		 System.out.println(result);
+		 return result;
+	 }  
 }
