@@ -22,7 +22,11 @@ public interface ProcedureMapper {
 	public int typeSelect(String id);
 	//사진값 다받아버리기
 	public ArrayList<Picture> PictureSelect();
+
 	public ArrayList<Product> ProductSelect();
 	//사진 이름별분류
 	public ArrayList<Picture> PictureNameSelect(Picturesearch picturesearch);
+
+	public Picture PictureSelectOne(int pictureSeq);
+
 }

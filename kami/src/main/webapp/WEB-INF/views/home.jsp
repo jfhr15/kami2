@@ -155,7 +155,7 @@
 		      <ul>
 		      
 		    	<c:forEach items="${picture}" var="picture">
-		    	 <li class="tt"><a href="#"><img src="img/${picture.savfile}" alt="" /></a></li>
+		    	 <li class="tt"><a id="${picture.pictureSeq}" href="goDetailHair?pictureSeq=${picture.pictureSeq}"><img src="img/${picture.savfile}" alt="" /></a></li>
 		    	</c:forEach>
 		      </ul>
 		      <p class="prev_btn">
@@ -317,6 +317,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script type="text/javascript" src="resources/js/swipe.js"></script>
     <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="resources/js/main.js"></script>
+    
 </body>
 
 </html>

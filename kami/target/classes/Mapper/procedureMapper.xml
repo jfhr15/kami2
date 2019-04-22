@@ -122,6 +122,20 @@
 	
 </select>
 
+<select id="PictureSelectOne" resultType="Picture" parameterType="Integer">
+	SELECT 
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+	FROM
+		PICTURE
+	where
+		PICTURESEQ=#{PICTURESEQ}
+</select>
 
 <!-- 사진 이름별 분류 -->
 <select id="PictureNameSelect" parameterType="Picturesearch" resultType="Picture">

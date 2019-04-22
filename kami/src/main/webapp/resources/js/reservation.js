@@ -386,7 +386,11 @@ function selectP(id){
 			var con = "";
 			con += '<ul class="testul">';
 			$.each(returndata, function(index, item){
-				con += '<li class="testli"><input id="' + item.procedureseq + '" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="' + item.procedureseq + '">' + item.pcd_name + '</label></li>';
+				if(item.pcd_price == 0){
+					con += '<li class="testli"><input id="' + item.procedureseq + '" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="' + item.procedureseq + '">' + item.pcd_name + '</label><label>' + item.pcd_time + '분 소요 | 무료</label></li>';
+				} else {
+					con += '<li class="testli"><input id="' + item.procedureseq + '" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="' + item.procedureseq + '">' + item.pcd_name + '</label><label>' + item.pcd_time + '분 소요 | ' + item.pcd_price + '원</label></li>';
+				}
 			});
 			con += '</ul>';
 			$("#conte").html(con);

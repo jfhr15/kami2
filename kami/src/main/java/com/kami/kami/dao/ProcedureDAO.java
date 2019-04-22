@@ -107,7 +107,7 @@ public class ProcedureDAO {
 			
 			return result2;	
 		}
-		
+
 		public ArrayList<Product> ProductSelect(){
 			ArrayList<Product> result = new ArrayList<Product>();
 			ArrayList<Product> result2 = new ArrayList<Product>();
@@ -142,4 +142,13 @@ public class ProcedureDAO {
 			return result;
 		}
 		
+
+		public Picture PictureSelectOne(int pictureSeq) {
+			Picture picture = new Picture();
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			picture = mapper.PictureSelectOne(pictureSeq);
+			
+			return picture;
+		}
+
 }
