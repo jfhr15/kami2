@@ -153,7 +153,7 @@
             <div id="arrival_zone">
             <div id="best_bg">
 		      <ul>
-		        <li class="tt"><a href="#"><img src="resources/img/beautiful.jpg" alt="" /></a></li>
+		      
 		    	<c:forEach items="${picture}" var="picture">
 		    	 <li class="tt"><a id="${picture.pictureSeq}" href="goDetailHair?pictureSeq=${picture.pictureSeq}"><img src="img/${picture.savfile}" alt="" /></a></li>
 		    	</c:forEach>
@@ -189,9 +189,9 @@
             <div id="arrival_zone2">
             <div id="best_bg2">
 		      <ul>
-		        <li class="tt"><a href="#"><img src="resources/img/beautiful.jpg" alt="" /></a></li>
-		    	<c:forEach items="${picture}" var="picture">
-		    	 <li class="tt"><a href="#"><img src="img/${picture.savfile}" alt="" /></a></li>
+		      
+		    	<c:forEach items="${product}" var="product">
+		    	 <li class="tt"><a href="#"><img src="img/${product.prd_ognfile}" alt="" /></a></li>
 		    	</c:forEach>
 		      </ul>
 		      <p class="prev_btn2">

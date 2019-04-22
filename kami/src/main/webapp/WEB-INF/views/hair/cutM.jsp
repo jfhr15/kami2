@@ -121,19 +121,13 @@
 
 <div class='menu-bar'>
 	<ul class="menu">
-	    <li><a href="#4">ㅁ</a>
+	    <li><a href="#1">1번 메뉴</a>
 	    	<ul>
-<<<<<<< HEAD
-		        <li><a href="#4A">남자</a></li>
-		        <li><a href="#4B">여자</a></li>
-=======
 		        <li><a href="#1A">1-A 메뉴</a></li>
 		        <li><a href="#1B">1-B 메뉴</a></li>
 	    	</ul>
 	    </li>
-	    
-	    
-	    <li><a href="#2">설정</a>
+	    <li><a href="#2">2번 메뉴</a>
 	    	<ul>
 	    		<li><a href="#2A">2-A 메뉴</a></li>
 	        	<li><a href="#2B">2-B 메뉴</a>
@@ -152,9 +146,6 @@
 	        	</li>
 	    	</ul>
 	    </li>
-	    
-	    
-	    
 	    <li><a href="#3">3번 메뉴</a>
 	    	<ul>
 		        <li><a href="#3A">3-A 메뉴</a></li>
@@ -165,36 +156,13 @@
 	    	<ul>
 		        <li><a href="#4A">4-A 메뉴</a></li>
 		        <li><a href="#4B">4-B 메뉴</a></li>
->>>>>>> d3f5b01f2475e40f9f9e58ed1e28b58b33ac0751
 	    	</ul>
 	    </li> 
 	</ul>
 </div>
 
 
-<div id="overLay"></div>
-<div id="side_menu" class='menu-bar'>
-  <ul class="menu">
-    <li class="ba" id="ba1"><a href="#" id="baW">여자</a>
-    	<ul>
-		    <li><a href="#">A</a></li>
-		    <li><a href="#">B</a></li>
-	    </ul>
-    </li>
-    <li class="ba" id="ba2"><a href="#" id="baM">남자</a>
-    	<ul>
-		    <li><a href="#">ㄱ</a></li>
-		    <li><a href="#">ㄴ</a></li>
-	    </ul>
-    </li>
-  </ul>
-  <div id="btn">◀</div>
-</div>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d3f5b01f2475e40f9f9e58ed1e28b58b33ac0751
 </div>
 	<div id="container">
 		<div id="contents">

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import com.kami.kami.vo.Condition;
 import com.kami.kami.vo.Picture;
+import com.kami.kami.vo.Picturesearch;
 import com.kami.kami.vo.Procedure;
+import com.kami.kami.vo.Product;
 
 public interface ProcedureMapper {
 	
@@ -20,5 +22,11 @@ public interface ProcedureMapper {
 	public int typeSelect(String id);
 	//사진값 다받아버리기
 	public ArrayList<Picture> PictureSelect();
+
+	public ArrayList<Product> ProductSelect();
+	//사진 이름별분류
+	public ArrayList<Picture> PictureNameSelect(Picturesearch picturesearch);
+
 	public Picture PictureSelectOne(int pictureSeq);
+
 }

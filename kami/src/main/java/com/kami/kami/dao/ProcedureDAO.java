@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import com.kami.kami.vo.Condition;
 import com.kami.kami.vo.Picture;
+import com.kami.kami.vo.Picturesearch;
 import com.kami.kami.vo.Procedure;
+import com.kami.kami.vo.Product;
 
 @Repository
 public class ProcedureDAO {
@@ -105,7 +107,42 @@ public class ProcedureDAO {
 			
 			return result2;	
 		}
+
+		public ArrayList<Product> ProductSelect(){
+			ArrayList<Product> result = new ArrayList<Product>();
+			ArrayList<Product> result2 = new ArrayList<Product>();
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			result = mapper.ProductSelect();
+			int k =0;
+			if(result.size() < 8) {
+				k=result.size();
+			} else {
+				k=8;
+			}
+			
+			for (int i = 0; i < k; i++) {
+				result2.add(result.get(i));
+			}
+			
+			return result2;	
+			
+		}
 		
+		//사진 이름별분류
+		public ArrayList<Picture> PictureNameSelect(Picturesearch picturesearch){
+			ArrayList<Picture> result = new ArrayList<Picture>();
+			
+			try {
+				ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+				result = mapper.PictureNameSelect(picturesearch);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return result;
+		}
+		
+
 		public Picture PictureSelectOne(int pictureSeq) {
 			Picture picture = new Picture();
 			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
@@ -113,4 +150,5 @@ public class ProcedureDAO {
 			
 			return picture;
 		}
+
 }

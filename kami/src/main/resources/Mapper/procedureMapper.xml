@@ -104,6 +104,23 @@
 		PICTURE
     order by PICTURESEQ desc
 </select>
+<select id="ProductSelect" resultType="Product">
+	select
+		PRODUCTSEQ
+		,KINDSEQ
+		,PRD_NAME
+		,PRD_PRICE1
+		,PRD_PRICE2
+		,PRD_CONTENT
+		,PRD_SAVFILE
+		,PRD_OGNFILE
+		,PRD_QUANTITY
+		,PRD_INDATE
+		,PCD_CONDITION
+	from
+		product
+	
+</select>
 
 <select id="PictureSelectOne" resultType="Picture" parameterType="Integer">
 	SELECT 
@@ -120,6 +137,21 @@
 		PICTURESEQ=#{PICTURESEQ}
 </select>
 
+<!-- 사진 이름별 분류 -->
+<select id="PictureNameSelect" parameterType="Picturesearch" resultType="Picture">
+	SELECT 
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+	FROM PICTURE
+	WHERE 
+		HASHTAG like '%'|| #{hashtag} ||'%'  and SETTING like '%'|| #{setting} ||'%'
+	 order by PICTURESEQ desc
+</select>
 
 </mapper>
 

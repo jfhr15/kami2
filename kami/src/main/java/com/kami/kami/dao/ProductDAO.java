@@ -60,6 +60,7 @@ public class ProductDAO {
 	
 	//상품 전체출력 및 검색출력 수정필요
 	public ArrayList<Product> selectProduct() {
+
 		 ArrayList<Product> pList = new ArrayList<Product>();
 		 ProductMapper mapper = session.getMapper(ProductMapper.class);
 			try {
