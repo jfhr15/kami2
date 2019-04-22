@@ -127,9 +127,7 @@
 		        <li><a href="#1B">1-B 메뉴</a></li>
 	    	</ul>
 	    </li>
-	    
-	    
-	    <li><a href="#2">설정</a>
+	    <li><a href="#2">2번 메뉴</a>
 	    	<ul>
 	    		<li><a href="#2A">2-A 메뉴</a></li>
 	        	<li><a href="#2B">2-B 메뉴</a>
@@ -148,9 +146,6 @@
 	        	</li>
 	    	</ul>
 	    </li>
-	    
-	    
-	    
 	    <li><a href="#3">3번 메뉴</a>
 	    	<ul>
 		        <li><a href="#3A">3-A 메뉴</a></li>

@@ -54,7 +54,7 @@
 	<if test="kindseq !=null">
 	where
 		kindseq=#{kindseq}
-	</if>
+	</if> 
 </select>
 
 

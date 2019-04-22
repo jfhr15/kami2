@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kami.kami.dao.ProcedureDAO;
+import com.kami.kami.dao.ProductDAO;
 import com.kami.kami.vo.Condition;
 import com.kami.kami.vo.Picture;
+import com.kami.kami.vo.Product;
 
 
 /**
@@ -25,6 +27,7 @@ public class HomeController {
 	
 	@Autowired
 	ProcedureDAO dao;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
@@ -36,9 +39,12 @@ public class HomeController {
 		String id= (String)session.getAttribute("loginId");
 		ArrayList<Picture> list = new ArrayList<Picture>();
 		list = dao.PictureSelect();
+		ArrayList<Product> pList = new ArrayList<Product>();
+	      pList = dao.ProductSelect();
+	   
 		if(id==null) {
 			model.addAttribute("picture", list);
-			
+			model.addAttribute("product", pList);
 			return "home";
 		}
 		
@@ -50,10 +56,12 @@ public class HomeController {
 		     Condition condition = chageCondition(gender, org_condition); 
 		     list = dao.pickmeSelect(condition);
 		     model.addAttribute("picture", list);
-			
+		     
+			model.addAttribute("product", pList);
 			
 		}else {
 			model.addAttribute("picture", list);
+			model.addAttribute("product", pList);
 		}
 		
 		
