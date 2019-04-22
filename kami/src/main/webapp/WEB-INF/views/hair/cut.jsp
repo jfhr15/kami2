@@ -121,83 +121,36 @@
 
 <div class='menu-bar'>
 	<ul class="menu">
-	    <li><a href="#1">1번 메뉴</a>
+	    <li><a href="#4">ㅁ</a>
 	    	<ul>
-		        <li><a href="#1A">1-A 메뉴</a></li>
-		        <li><a href="#1B">1-B 메뉴</a></li>
-	    	</ul>
-	    </li>
-	    <li><a href="#2">2번 메뉴</a>
-	    	<ul>
-	    		<li><a href="#2A">2-A 메뉴</a></li>
-	        	<li><a href="#2B">2-B 메뉴</a>
-		          	<ul>
-		            	<li><a href="#2B1">2-B-1 메뉴</a></li>
-		            	<li><a href="#2B2">2-B-2 메뉴</a></li>
-		          	</ul>
-	       		</li>
-		        <li><a href="#2C">2-C 메뉴</a></li>
-		        <li><a href="#2D">2-D 메뉴</a>
-		        	<ul>
-		        		<li><a href="#2D1">2-D-1 메뉴</a></li>
-			            <li><a href="#2D2">2-D-2 메뉴</a></li>
-			            <li><a href="#2D3">2-D-3 메뉴</a></li>
-		        	</ul>
-	        	</li>
-	    	</ul>
-	    </li>
-	    <li><a href="#3">3번 메뉴</a>
-	    	<ul>
-		        <li><a href="#3A">3-A 메뉴</a></li>
-		        <li><a href="#3B">3-B 메뉴</a></li>
-	    	</ul>
-	    </li> 
-	    <li><a href="#4">4번 메뉴</a>
-	    	<ul>
-		        <li><a href="#4A">4-A 메뉴</a></li>
-		        <li><a href="#4B">4-B 메뉴</a></li>
+		        <li><a href="#4A">남자</a></li>
+		        <li><a href="#4B">여자</a></li>
 	    	</ul>
 	    </li> 
 	</ul>
 </div>
 
 
+<div id="overLay"></div>
+<div id="side_menu" class='menu-bar'>
+  <ul class="menu">
+    <li class="ba" id="ba1"><a href="#" id="baW">여자</a>
+    	<ul>
+		    <li><a href="#">A</a></li>
+		    <li><a href="#">B</a></li>
+	    </ul>
+    </li>
+    <li class="ba" id="ba2"><a href="#" id="baM">남자</a>
+    	<ul>
+		    <li><a href="#">ㄱ</a></li>
+		    <li><a href="#">ㄴ</a></li>
+	    </ul>
+    </li>
+  </ul>
+  <div id="btn">◀</div>
+</div>
 
-<div id="container0">
 
-	 <div class="button-1">
-    <div class="eff-1"></div>
-    <a href="#"> Touch me </a>
-  </div>
-  <div class="button-4">
-    <div class="eff-4"></div>
-    <a href="#"> Touch me </a>
-  </div>
-  <div class="button-2">
-    <div class="eff-2"></div>
-    <a href="#"> Touch me </a>
-  </div>
-  <div class="button-3">
-    <div class="eff-3"></div>
-    <a href="#"> Touch me </a>
-  </div>
-  <div class="button-5">
-    <div class="eff-5"></div>
-    <a href="#"> Touch me </a>
-  </div>
-  <div class="button-6">
-    <div class="eff-6"></div>
-    <a href="#"> Touch me </a>
-  </div>
-  <div class="button-7">
-    <div class="eff-7"></div>
-    <a href="#"> Touch me </a>
-  </div>
-  <div class="button-8">
-    <div class="eff-8"></div>
-    <a href="#"> Touch me </a>
-  </div>
-</div>	
 </div>
 	<div id="container">
 		<div id="contents">

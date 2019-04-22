@@ -34,3 +34,55 @@
 #arrival_zone, #arrival_zone2{
 	margin-bottom: 7%;
 }
+.container {
+	background-color: #FFFFFF;
+}
+.main-footer-area{
+	background-color: #FFFFFF;
+}
+.bg-overlay::after{
+	background-color: #FFFFFF;
+}
+.h-100{
+	background-color: #000000;
+}
+.w1{
+	display: inline-block;
+	float: left;
+}
+.footerV1{
+	margin-left: 5%;
+	width: 100%;
+	margin-bottom: 3%;
+	display: flex;
+}
+.footerV2{
+	margin-left: 5%;
+	width: 100%;
+	margin-bottom: 3%;
+}
+.w3{
+	margin-left: 5%;
+}
+.foot-area{
+	display: none;
+}
+#fa{
+	border-top: 1px solid #ccc;
+	padding-top: 3%;
+}
+#iw1{
+	width: 15%;
+}
+#iw2{
+	width: 85%;
+}
+.section-padding-100-0{
+	padding-top: 0;
+}
+.w4{
+	float: left;
+	width: 15%;
+	margin-top: auto;
+    margin-bottom: auto;
+}

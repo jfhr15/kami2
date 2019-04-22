@@ -29,7 +29,7 @@
 		<typeAlias type="com.kami.kami.vo.Chartpie" alias="Chartpie" />
 		<typeAlias type="com.kami.kami.vo.Chartarea" alias="Chartarea" />
 		<typeAlias type="com.kami.kami.vo.Picture" alias="Picture" />
-			<typeAlias type="com.kami.kami.vo.Condition" alias="Condition" />
+		<typeAlias type="com.kami.kami.vo.Condition" alias="Condition" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="Mapper/adminMapper.xml" />

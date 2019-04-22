@@ -1,17 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="sub entryhide js no-touch csstransforms csstransforms3d csstransitions">
-<head>
-<meta charset="UTF-8">
 <!-- 
 페이지 이동 코드
 function checkSuccess(){
@@ -25,25 +18,156 @@ function checkSuccess(){
   location.href="list.jsp";
  }
 }
-
 출처: https://krespo.net/4 [KRESPO.NET]
  -->
 <title>product</title>
-   <link href="resources/css/cut.css" rel="stylesheet" />
-   <link href="resources/styles/reset.css" rel="stylesheet" /> 
-   <link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
-   <meta name="author" content="Jake Rocheleau">
-   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-   <link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
-   <link rel="icon" href="http://www.templatemonster.com/favicon.ico">
-   <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
-   <script type="text/javascript" src="resources/js/swipe.js"></script>
-   <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="resources/js/main.js"></script>
+
+	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
+    <link rel="stylesheet" href="resources/cryptos-master/style.css">
+	
+	<link href="resources/css/cut.css" rel="stylesheet" />
+   
+</head>
+<body>
+	<!-- 결제 위한 enseq설정. 왜 있는거지? -->
+<!--  <input type="hidden" id="enseq" value="0"> -->
+	
+	<!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="top-header-content h-100 d-flex align-items-center justify-content-between">
+                            <!-- Top Headline -->
+                            <div class="top-headline">
+                                <p>Welcome to <span>Kamikami</span></p>
+                            </div>
+                            <div class="login-faq-earn-money">
+                	            <c:if test="${sessionScope.loginId != null}">
+ 									<a href="logout">Logout</a>
+ 									<c:if test="${sessionScope.empType != null}">
+	 									<c:if test="${sessionScope.empType == 0}">
+	 										<a href="goManagement">Management</a>
+	 									</c:if>
+	 									<c:if test="${sessionScope.empType != 0}">
+											<a href="goIndex">MyPage</a>
+										</c:if>
+									</c:if>
+								</c:if>
+								<c:if test="${sessionScope.loginId == null}">
+                              		<a href="goLogin">Login</a>
+                               		<a href="goSignup">Register</a>
+                                </c:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="cryptos-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="cryptosNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="goHome"><img src="resources/cryptos-master/img/core-img/logo.png" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="goHome">Home</a></li>
+                                    <li><a href="#">Hair</a>
+                                        <ul class="dropdown">
+                                            <li><a href="goCut">Cut</a></li>
+                                            <li><a href="goPerm">Perm</a></li>
+                                            <li><a href="goColor">Color</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="goProduct">Product</a></li>
+                                    <c:choose>
+					 					<c:when test="${sessionScope.memType != null}">
+					 						<li><a href="goReservation">Reservation</a></li>
+					 					</c:when>
+					 					<c:when test="${sessionScope.empType != null}">
+					 						<li><a href="goReservationList">Reservation</a></li>
+					 					</c:when>
+					 					<c:otherwise>
+					 						<li><a href="goReservation">Reservation</a></li>
+					 					</c:otherwise>
+					 				</c:choose>
+                                    <li><a href="goBoard">Community</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    
+    
+    <div id="container">
+      <div id="contents">
+         <div>
+            <div id="searchList" class="nonEntry">
+               <span id="searchList_title"><h2 title="COLOR" class="ArticleTitle">PRODUCT</h2></span>
+               <ol id="product">
+               
+               </ol>
+               <input type='number' id='quantity' name='myProduct_quantity'>
+               <input type='submit' id='buyProduct' name='buyProduct'>
+            </div>
+         </div>
+      <!-- 하단 번호 -->
+         <div id="paging">
+            <a class="#" id="prevPage">이전</a>
+            <span class="numbox">
+               <a class="num"> <span class="selected">1</span></a>
+               <a href="#" class="num"> <span>2</span></a>
+               <a href="#" class="num"> <span>3</span></a>
+               <a href="#" class="num"> <span>4</span></a>
+               <a href="#" class="num"> <span>5</span></a>
+            </span>
+            <a href="#" class="" id="nextPage">다음</a>
+         </div>
+      </div>   
+   </div>
+
+
+	<script src="resources/cryptos-master/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="resources/cryptos-master/js/bootstrap/popper.min.js"></script>
+    <script src="resources/cryptos-master/js/bootstrap/bootstrap.min.js"></script>
+    <script src="resources/cryptos-master/js/plugins/plugins.js"></script>
+    <script src="resources/cryptos-master/js/active.js"></script>
 
    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-       
-    <script type="text/javascript">
+	<script type="text/javascript">
 
     $(function() {
        init();
@@ -121,14 +245,6 @@ function checkSuccess(){
          
     }); 
     }
-    
-    
-    
-    
-    
-    </script>
-    <script type="text/javascript">
-    
     
     function payment(data) {
     	
@@ -260,91 +376,6 @@ function checkSuccess(){
     	    }
     	});
     }
-    
-   
-   
    </script>
-</head>
-<body>
-	<!-- 결제 위한 enseq설정. 왜 있는거지? -->
-<!--  <input type="hidden" id="enseq" value="0"> -->
- 
-   <header>
-      <div class="header_wrap">
-         <div class="header_inner">
-            <div id="skipNavi"><a href="#container">본문바로가기</a></div>
-            <dl class="topMenu">
-            <dt class="blind">탑메뉴</dt>
-            <c:if test="${sessionScope.loginId != null}">
-                <dd><a href="logout"id="loginForm">Logout</a></dd>
-               <dd><a href="goIndex"id="loginForm">MyPage</a></dd>
-            </c:if>
-            <c:if test="${sessionScope.loginId == null}">
-               <dd><a href="goLogin"id="loginForm">Login</a></dd>
-               <dd class="signup"> <a href="goSignup" id="signForm">SignUp</a></dd>
-            </c:if>
-            </dl>
-         </div>
-          <h1><a href="goHome" id="mainForm"><img src="resources/logo.png" alt="kamikami"/></a></h1>
-
-          <nav class="gnb">
-          <h2 class="blind">주메뉴</h2>
-          <ul>
-            <li><a href="#"><h3 class="gnbtit">About</h3></a></li>
-            <li><a href="#"><h3 class="gnbtit">Hair</h3></a>
-         <ul>
-            <li><a href="#">New Arrival</a>
-         <ul>
-            <li><a href="goCut">Cut</a></li>
-            <li><a href="goPerm">Perm</a></li>
-            <li><a href="goColor">Color</a></li>
-         </ul>
-         </li>
-         </ul>
-          </li>
-            <li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
-            <li><a href="goProduct"><h3 class="gnbtit">Product</h3></a></li>
-            <li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
-         </ul>
-         </nav>
-      </div>
-   </header>
-
-
-
-
-
-
-
-
-   <!--header 끝-->
-   <div id="container">
-      <div id="contents">
-         <div>
-            <div id="searchList" class="nonEntry">
-               <span id="searchList_title"><h2 title="COLOR" class="ArticleTitle">PRODUCT</h2></span>
-               <ol id="product">
-               
-               </ol>
-               <input type='number' id='quantity' name='myProduct_quantity'>
-               <input type='submit' id='buyProduct' name='buyProduct'>
-            </div>
-         </div>
-      <!-- 하단 번호 -->
-         <div id="paging">
-            <a class="#" id="prevPage">이전</a>
-            <span class="numbox">
-               <a class="num"> <span class="selected">1</span></a>
-               <a href="#" class="num"> <span>2</span></a>
-               <a href="#" class="num"> <span>3</span></a>
-               <a href="#" class="num"> <span>4</span></a>
-               <a href="#" class="num"> <span>5</span></a>
-            </span>
-            <a href="#" class="" id="nextPage">다음</a>
-         </div>
-      </div>   
-   </div>
-</body>
-</html>
 </body>
 </html>

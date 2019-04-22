@@ -8,7 +8,7 @@
     <title>Register</title>
 
     <link rel="icon" href="http://www.templatemonster.com/favicon.ico">
-    <link rel="stylesheet" href="resources/cryptos-master/style.css">
+    <link rel="stylesheet" href="resources/cryptos-master/style2.css">
     <link href="resources/css/signup.css" rel="stylesheet" />
     
 </head>

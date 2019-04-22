@@ -303,7 +303,7 @@ img {
     background-position: center center;
     background-size: cover;
     &::after {
-        background-color: rgba(10, 12, 18, 0.9);
+        background-color: #rgba(10, 12, 18, 0.9);
         position: absolute;
         z-index: -1;
         top: 0;
@@ -1151,7 +1151,6 @@ textarea:focus {
 /* :: 11.0 Footer Area CSS */
 
 .main-footer-area {
-    background-color: #232323;
     .footer-widget {
         .widget-title {
             margin-bottom: 45px;
