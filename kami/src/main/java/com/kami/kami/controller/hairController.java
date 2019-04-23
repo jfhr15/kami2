@@ -34,16 +34,23 @@ public class hairController {
 		ArrayList<Picture> list = new ArrayList<Picture>();
 
 		
-		if((hashtag==null)||(setting==null)) {
-			picturesearch.setHashtag("");
-			picturesearch.setSetting("여자");
+		if(hashtag==null) {
+			
+			hashtag = "컷";
+			
 		}
+		if(setting==null) {
+			
+			setting ="여자";
+		}
+		picturesearch.setHashtag(hashtag);
+		picturesearch.setSetting(setting);
 		
 		System.out.println(picturesearch);
 		list = dao.PictureNameSelect(picturesearch);
 		
-	
-		
+		model.addAttribute("setting", setting);
+		model.addAttribute("hashtag", hashtag);
 		model.addAttribute("picture", list);
 		
 		
@@ -54,32 +61,118 @@ public class hairController {
 	public String goCutM(String hashtag, String setting , Model model) {
 		Picturesearch picturesearch = new Picturesearch();
 		ArrayList<Picture> list = new ArrayList<Picture>();
-
 		
-		if((hashtag==null)||(setting==null)) {
-			picturesearch.setHashtag("");
-			picturesearch.setSetting("여자");
+		if(hashtag==null) {
+			
+			hashtag = "컷";
+			
 		}
+		if(setting==null) {
+			
+			setting ="남자";
+		}
+		picturesearch.setHashtag(hashtag);
+		picturesearch.setSetting(setting);
 		
-		System.out.println(picturesearch);
+		
 		list = dao.PictureNameSelect(picturesearch);
 		
-	
-		
+		model.addAttribute("setting", setting);
+		model.addAttribute("hashtag", hashtag);
 		model.addAttribute("picture", list);
+		
+		
 		
 		
 		return "hair/cutM";
 	}
 	
 	@RequestMapping(value = "/goPerm", method = RequestMethod.GET)
-	public String goPerm() {
+	public String goPerm(String hashtag, String setting , Model model) {
+		Picturesearch picturesearch = new Picturesearch();
+		ArrayList<Picture> list = new ArrayList<Picture>();
+
+		if(hashtag==null) {
+			
+			hashtag = "펌";
+			
+		}
+		if(setting==null) {
+			
+			setting ="여자";
+		}
+		
+		picturesearch.setHashtag(hashtag);
+		picturesearch.setSetting(setting);
+		
+		System.out.println(picturesearch);
+		list = dao.PictureNameSelect(picturesearch);
+		
+		model.addAttribute("setting", setting);
+		model.addAttribute("hashtag", hashtag);
+		model.addAttribute("picture", list);
+		
 		
 		return "hair/perm";
 	}
 	
+	@RequestMapping(value = "/goPermM", method = RequestMethod.GET)
+	public String goPermM(String hashtag, String setting , Model model) {
+		Picturesearch picturesearch = new Picturesearch();
+		ArrayList<Picture> list = new ArrayList<Picture>();
+
+		if(hashtag==null) {
+			
+			hashtag = "펌";
+			
+		}
+		if(setting==null) {
+			
+			setting ="여자";
+		}
+		
+		picturesearch.setHashtag(hashtag);
+		picturesearch.setSetting(setting);
+		
+		System.out.println(picturesearch);
+		list = dao.PictureNameSelect(picturesearch);
+		
+		model.addAttribute("setting", setting);
+		model.addAttribute("hashtag", hashtag);
+		model.addAttribute("picture", list);
+		
+		
+		return "hair/permM";
+	}
+	
+	
 	@RequestMapping(value = "/goColor", method = RequestMethod.GET)
-	public String goColor() {
+	public String goColor(String hashtag, String setting , Model model) {
+		
+		Picturesearch picturesearch = new Picturesearch();
+		ArrayList<Picture> list = new ArrayList<Picture>();
+
+		if(hashtag==null) {
+			
+			hashtag = "브";
+			
+		}
+		if(setting==null) {
+			
+			setting ="여자";
+		}
+		
+		picturesearch.setHashtag(hashtag);
+		picturesearch.setSetting(setting);
+		
+		System.out.println(picturesearch);
+		list = dao.PictureNameSelect(picturesearch);
+		
+		model.addAttribute("setting", setting);
+		model.addAttribute("hashtag", hashtag);
+		model.addAttribute("picture", list);
+		
+		
 		
 		return "hair/color";
 	}

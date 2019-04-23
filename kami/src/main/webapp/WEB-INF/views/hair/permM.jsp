@@ -125,11 +125,11 @@
   <ul class="menu">
     <li class="ba" id="ba1"><a href="#" id="baW">여자</a>
     	<ul>
-		    <li><div id="ba11" data-name="여자" onclick="onClickSetting(this)" >전체</div></li>
-		    <li><div id="ba12" data-name="여자/롱" onclick="onClickSetting(this)" >롱</div></li>
-		    <li><div id="ba13" data-name="여자/미디엄" onclick="onClickSetting(this)" >미디엄</div></li>
-	   	    <li><div id="ba14" data-name="여자/단발" onclick="onClickSetting(this)" >단발</div></li>
-	   	    <li><div id="ba15" data-name="여자/숏" onclick="onClickSetting(this)" >숏</div></li>
+		    <li><div id="ba11" data-name="여자" onclick="onClickSettingG(this)" >전체</div></li>
+		    <li><div id="ba12" data-name="여자/롱" onclick="onClickSettingG(this)" >롱</div></li>
+		    <li><div id="ba13" data-name="여자/미디엄" onclick="onClickSettingG(this)" >미디엄</div></li>
+	   	    <li><div id="ba14" data-name="여자/단발" onclick="onClickSettingG(this)" >단발</div></li>
+	   	    <li><div id="ba15" data-name="여자/숏" onclick="onClickSettingG(this)" >숏</div></li>
 	
 		  
 	    </ul>
@@ -157,7 +157,7 @@
 		<div id="contents">
 			<div>
 				<div id="searchList" class="nonEntry">
-					<span id="searchList_title"><h2 title="COLOR" class="ArticleTitle">PERM</h2></span>
+					<span id="searchList_title"><h2 title="PERM" class="ArticleTitle">CUT</h2></span>
 					
 				</div>
 			</div>
@@ -175,32 +175,28 @@
 		        <div class="Nlnb_inner">
 		            <ul class="Nnav">
 		            <!--[D] 선택메뉴에 Nnav_item_active 추가-->
-		            <li class="Nnav_cell"><div id="id1" data-name="브" onclick="onClick(this)" class="Nnav_item">전체</div></li>
-		         	<li class="Nnav_cell"><div id="id2" data-name="다크브라운" onclick="onClick(this)" class="Nnav_item">다크브라운</div></li>
-		         	<li class="Nnav_cell"><div id="id3" data-name="레드브라운" onclick="onClick(this)" class="Nnav_item">레드브라운</div></li>
-		         	<li class="Nnav_cell"><div id="id4" data-name="밀크브라운" onclick="onClick(this)" class="Nnav_item">밀크브라운</div></li>
-		         	<li class="Nnav_cell"><div id="id5" data-name="카키브라운" onclick="onClick(this)" class="Nnav_item">카키브라운</div></li>
-		           	<li class="Nnav_cell"><div id="id6" data-name="쿠퍼브라운" onclick="onClick(this)" class="Nnav_item">쿠퍼브라운</div></li>
-		         	<li class="Nnav_cell"><div id="id7" data-name="올리브브라운" onclick="onClick(this)" class="Nnav_item">올리브브라운</div></li>
-		         	<li class="Nnav_cell"><div id="id8" data-name="골드브라운" onclick="onClick(this)" class="Nnav_item">골드브라운</div></li>	
-		     	    <li class="Nnav_cell"><div id="id9" data-name="핑크브라운" onclick="onClick(this)" class="Nnav_item">핑크브라운</div></li>
-		            <li class="Nnav_cell"><div id="id10" data-name="레드와인" onclick="onClick(this)" class="Nnav_item">레드와인</div></li>
-		            <li class="Nnav_cell"><div id="id11" data-name="블루블랙" onclick="onClick(this)" class="Nnav_item">블루블랙</div></li>
-		            <li class="Nnav_cell"><div id="id12" data-name="애쉬브라운" onclick="onClick(this)" class="Nnav_item">애쉬브라운</div></li> 
-		            <li class="Nnav_cell"><div id="id13" data-name="애쉬그레이" onclick="onClick(this)" class="Nnav_item">애쉬그레이</div></li>
-		            <li class="Nnav_cell"><div id="id14" data-name="애쉬베이지" onclick="onClick(this)" class="Nnav_item">애쉬베이지</div></li> 
-		            <li class="Nnav_cell"><div id="id15" data-name="애쉬블론드" onclick="onClick(this)" class="Nnav_item">애쉬블론드</div></li> 
-		          	<li class="Nnav_cell"><div id="id16" data-name="애쉬카키" onclick="onClick(this)" class="Nnav_item">애쉬카키</div></li>
-		            <li class="Nnav_cell"><div id="id17" data-name="애쉬블루" onclick="onClick(this)" class="Nnav_item">애쉬블루</div></li> 
-		          	<li class="Nnav_cell"><div id="id18" data-name="애쉬바이올렛" onclick="onClick(this)" class="Nnav_item">애쉬바이올렛</div></li>
-		            <li class="Nnav_cell"><div id="id19" data-name="애쉬퍼플" onclick="onClick(this)" class="Nnav_item">애쉬퍼플</div></li>
-		          	<li class="Nnav_cell"><div id="id20" data-name="퍼플그레이" onclick="onClick(this)" class="Nnav_item">퍼플그레이</div></li>
-		           	<li class="Nnav_cell"><div id="id21" data-name="로즈골드" onclick="onClick(this)" class="Nnav_item">로즈골드</div></li>
-		            <li class="Nnav_cell"><div id="id22" data-name="옴보레" onclick="onClick(this)" class="Nnav_item">옴보레</div></li>
-		           	<li class="Nnav_cell"><div id="id23" data-name="마르살라" onclick="onClick(this)" class="Nnav_item">마르살라</div></li>
-		           	<li class="Nnav_cell"><div id="id24" data-name="마호가니" onclick="onClick(this)" class="Nnav_item">마호가니</div></li>
-		        
-		            
+		            <li class="Nnav_cell"><div id="id1" data-name="펌" onclick="onClick(this)" class="Nnav_item">전체</div></li>
+		         	<li class="Nnav_cell"><div id="id2" data-name="가르마펌" onclick="onClick(this)" class="Nnav_item">가르마펌</div></li>
+		         	<li class="Nnav_cell"><div id="id3" data-name="내츄럴펌" onclick="onClick(this)" class="Nnav_item">내츄럴펌</div></li>
+		         	<li class="Nnav_cell"><div id="id4" data-name="다운펌" onclick="onClick(this)" class="Nnav_item">다운펌</div></li>
+		         	<li class="Nnav_cell"><div id="id5" data-name="댄디펌" onclick="onClick(this)" class="Nnav_item">댄디펌</div></li>
+		           	<li class="Nnav_cell"><div id="id6" data-name="러블리펌" onclick="onClick(this)" class="Nnav_item">러블리펌</div></li>
+		         	<li class="Nnav_cell"><div id="id7" data-name="리젠트펌" onclick="onClick(this)" class="Nnav_item">리젠트펌</div></li>
+		         	<li class="Nnav_cell"><div id="id8" data-name="베이비펌" onclick="onClick(this)" class="Nnav_item">베이비펌</div></li>
+		         	<li class="Nnav_cell"><div id="id9" data-name="볼륨펌" onclick="onClick(this)" class="Nnav_item">볼륨펌</div></li>
+		            <li class="Nnav_cell"><div id="id10" data-name="쉐도우펌" onclick="onClick(this)" class="Nnav_item">쉐도우펌</div></li>
+		         	<li class="Nnav_cell"><div id="id11" data-name="스왈로펌" onclick="onClick(this)" class="Nnav_item">스왈로펌</div></li>
+		         	<li class="Nnav_cell"><div id="id12" data-name="아이롱펌" onclick="onClick(this)" class="Nnav_item">아이롱펌</div></li>
+		         	<li class="Nnav_cell"><div id="id13" data-name="텍스쳐펌" onclick="onClick(this)" class="Nnav_item">텍스쳐펌</div></li>
+		         	<li class="Nnav_cell"><div id="id14" data-name="투블러펌" onclick="onClick(this)" class="Nnav_item">투블러펌</div></li>
+		            <li class="Nnav_cell"><div id="id15" data-name="포마드펌" onclick="onClick(this)" class="Nnav_item">포마드펌</div></li>
+		            <li class="Nnav_cell"><div id="id16" data-name="호일펌" onclick="onClick(this)" class="Nnav_item">호일펌</div></li>
+		           	<li class="Nnav_cell"><div id="id17" data-name="투블럭펌" onclick="onClick(this)" class="Nnav_item">투블럭펌</div></li> 
+		          	<li class="Nnav_cell"><div id="id18" data-name="포마드펌" onclick="onClick(this)" class="Nnav_item">포마드펌</div></li>  
+		          	<li class="Nnav_cell"><div id="id19" data-name="호일펌" onclick="onClick(this)" class="Nnav_item">호일펌</div></li>  
+		          	<li class="Nnav_cell"><div id="id20" data-name="쉼표머리" onclick="onClick(this)" class="Nnav_item">쉼표머리</div></li>
+		         	<li class="Nnav_cell"><div id="id21" data-name="특수머리" onclick="onClick(this)" class="Nnav_item">특수머리</div></li>
+		         	   
 		            </ul>
 		        </div>
 		    </div>
@@ -223,12 +219,14 @@ $(function(){
 });
 </script>
 
-<form id="target"action="goColor">
+<form id="target"action="goCutM">
 <input type="hidden" id ="setting" name="setting">
 <input type="hidden" id="hashtag" name="hashtag">
  </form>
  
- 
+ <form id="targetG"action="goCut">
+ <input type="hidden" id ="settingG" name="setting">
+</form>
 <!-- 네이버 테스트 -->
 <script>
 
@@ -257,6 +255,18 @@ function onClickSetting(e){
 }
 
 
+function onClickSettingG(e){
+
+
+ 	var setting = e.getAttribute("data-name");
+ 	
+ 	$("#settingG").val(setting); 
+    
+    $("#targetG").submit();
+ 	
+  
+    
+}
 
 
 
