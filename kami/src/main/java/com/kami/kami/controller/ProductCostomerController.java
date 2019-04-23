@@ -193,17 +193,20 @@ public class ProductCostomerController {
 		}
 		return paymentResponse;
 	}
-   
-   //한명의 물건 구매 정보 조회
-	@RequestMapping(value = "selectOrders", method = RequestMethod.POST)
-	public @ResponseBody HashMap<Object, Object> selectOrders(HttpSession session) {
-		HashMap<Object, Object> orders = new HashMap<Object, Object>();
-		
-		String mem_id = (String)session.getAttribute("loginId");
-		orders = pmdao.selectOrders(mem_id);
-		System.out.println(orders);
-		return orders;
-	}
+
+	   //한명의 물건 구매 정보 조회
+		@RequestMapping(value = "selectttOrders", method = RequestMethod.POST)
+		public @ResponseBody List<HashMap<String, Object>> selectOrders(HttpSession session) {
+			List<HashMap<String, Object>> orders = new ArrayList<HashMap<String, Object>>();
+			
+			String mem_id = (String)session.getAttribute("loginId");
+			System.out.println("mem_id"+ mem_id);
+			orders = pmdao.selectOrders(mem_id);
+			System.out.println("orders" + orders);
+			
+			System.out.println("한명의 물건 구매 정보 조회 : "+orders);
+			return orders;
+		}
 	
 	
    

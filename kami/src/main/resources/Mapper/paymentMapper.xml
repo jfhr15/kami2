@@ -104,6 +104,8 @@
 		a.productseq = c.productseq
 		and
 		a.paymentnum = b.paymentnum
+		and
+		a.mem_id = #{mem_id}
 	</select>
 	
 	

@@ -5,21 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 
-페이지 이동 코드
-function checkSuccess(){
- if(document.hiddenForm.hiddenItem.value==0){
-  alert("자신의 글만 삭제할수 있습니다.");
-  location.href="list.jsp";                               //alert문을 실행해서 팝업창을 띄운다음에 list.jsp로 이동한다.
- }
- if(document.hiddenForm.hiddenItem.value==1)
- {
-  alert("글이 정상적으로 삭제 되었습니다.");
-  location.href="list.jsp";
- }
-}
-출처: https://krespo.net/4 [KRESPO.NET]
- -->
+
 <title>product</title>
 
 	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
@@ -29,9 +15,6 @@ function checkSuccess(){
    
 </head>
 <body>
-	<!-- 결제 위한 enseq설정. 왜 있는거지? -->
-<!--  <input type="hidden" id="enseq" value="0"> -->
-	
 	<!-- ##### Preloader ##### -->
     <div id="preloader">
         <i class="circle-preloader"></i>
@@ -237,7 +220,14 @@ function checkSuccess(){
                 , productseq : productseq
              }
              ,success : function(resp){
-                   payment(resp);
+            	 var loginId= '${sessionScope.loginId}';
+ 				console.log(loginId);
+             	 if (loginId===""){
+             	 	alert("로그인 해주세요.");
+             	 	location.href="goLogin";
+             	 } else {
+             	 	payment(resp);
+             	 }
                 }
              });
          
@@ -351,31 +341,27 @@ function checkSuccess(){
 								
 								success : function(rsp) {
 									console.log("rsp after finish : " + JSON.stringify(rsp));
-									alert(rsp.success);
+									alert("결제가 완료되었습니다.");
+									location.href="complete";
 								}
 							});
-							
-							
-    	        		} else {
-    	        			//[3] 아직 제대로 결제가 되지 않았습니다.
-    	        			//[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-    	        		}
-    	    		}).fail(function(result) {
-    	                alert("요청 실패");
-    	
-    	            });
-    	    		/* error : function() {
-    	    			alert("An error occured");
-    	    		}
-    	    	}); */
-    	    } else {
-    	        var msg = '결제에 실패하였습니다.';
-    	        msg += '에러내용 : ' + rsp.error_msg;
-    	
-    	        alert(msg);
-    	    }
-    	});
-    }
+	   	        		} else {
+	  	        			var msg = '결제에 실패하였습니다.';
+	   	           	        msg += '에러내용 : ' + rsp.error_msg;
+	   	           	
+	   	           	        alert("222"+msg);
+	   	           	   		//[3] 아직 제대로 결제가 되지 않았습니다.
+	   	        			//[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
+	   	        		}
+	   	    		}).fail(function(result) {
+	   	                alert("요청 실패");
+	   	            })
+	   			}
+	   	    		/* error : function() {
+	   	    			alert("An error occured");
+	   	    		} */
+	   	    });
+	    }
    </script>
 </body>
 </html>
