@@ -124,15 +124,23 @@ $(function() {
 		var c = '#5fd14b';
 		
 		$.each(cList, function(index, item) {
-			$('#calendar').fullCalendar('renderEvent', {
-				title : item.emp_Id,
-				content : "디자이너 " + item.emp_id + "에게 예약",
-				start : item.rsv_date,
-				end : item.rsv_date + item.rsv_time,
-				allDay : false,
-				id : item.reservationseq,
-				groupId : item.mem_id,
-				backgroundColor : c
+			$.ajax({
+				url : 'selName',
+				data : {
+					id : item.emp_id
+				},
+				type : 'post',
+				success : function(re) {
+					$('#calendar').fullCalendar('renderEvent', {
+						content : "디자이너 " + re + "에게 예약",
+						start : item.rsv_date,
+						end : item.rsv_date + item.rsv_time,
+						allDay : false,
+						id : item.reservationseq,
+						groupId : item.mem_id,
+						backgroundColor : c
+					});
+				}
 			});
 		})
 	}	
@@ -170,6 +178,7 @@ $(function() {
 		var start = $("#hStart").val();
 		var emp_id = $("#emp_id").val();
 		var pcd = $("#pcd").val();
+		var pictureSeq = $("#pictureSeq").val();
 		
 		if (flag == 0) {
 			$.ajax({
@@ -177,7 +186,8 @@ $(function() {
 				data : {
 					rsv_date : start,
 					emp_id : emp_id,
-					pcd : pcd
+					pcd : pcd,
+					pictureSeq : pictureSeq
 				},
 				type : 'post',
 				success : function() {
@@ -195,6 +205,7 @@ $(function() {
 								},
 								type: 'post',
 								success: function(){
+									sch();
 									window.location.reload();
 								}
 							});
@@ -393,6 +404,7 @@ function selectP(id){
 				}
 			});
 			con += '</ul>';
+			con += '<p>예약으로 인한 손실을 줄이기 위해 선결제 10000원이 이루어지며 남은 금액은 시술 후 지불하게 됩니다.</p>';
 			$("#conte").html(con);
 			checkbox();
 		}

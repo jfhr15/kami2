@@ -14,6 +14,7 @@
 			,rsv_date
 			,rsv_time
 			,rsv_totalPrice
+			,pictureSeq
 		) values(
 			reservationSeq.nextval
 			,#{emp_id}
@@ -22,6 +23,7 @@
 			,TO_DATE(#{rsv_date},'YYYY-MM-DD HH24:MI')
 			,#{rsv_time}
 			,10000
+			,#{pictureSeq}
 		)
 	</insert>
 
@@ -34,6 +36,7 @@
 			,rsv_date
 			,rsv_time
 			,rsv_totalPrice
+			,pictureSeq
 	 	from 
 	 		reservation 
 	 	where
@@ -49,6 +52,7 @@
 			,rsv_date
 			,rsv_time
 			,rsv_totalPrice
+			,pictureSeq
 	 	from 
 	 		reservation 
 	 	where
@@ -62,7 +66,7 @@
 			reservationseq=#{reservationseq}
 	</delete>
 	
-	<select id="selectResOne" resultType="Res" parameterType="String">
+	<select id="selectResOne" resultType="Res" parameterType="Integer">
 		select
 			reservationseq
 			,emp_id
@@ -71,6 +75,7 @@
 			,rsv_date
 			,rsv_time
 			,rsv_totalPrice
+			,pictureSeq
 	 	from 
 	 		reservation 
 	 	where
@@ -150,5 +155,40 @@
 			max(reservationseq) as reservationseq 
 		from 
 			reservation
+	</select>
+	
+	<select id="yasumi" resultType="off" parameterType="String">
+		select 
+			off_scheduleseq
+    		,emp_id
+    		,off_startdate
+    		,off_enddate
+    		,off_check
+    	from
+    		offSchedule
+    	where
+    		off_check='승인'
+    	and 
+    		emp_id=#{emp_id}
+	</select>
+	
+	<select id="selectPI" resultType="Procedureinfomation" parameterType="Integer">
+		select
+			proinfoseq
+			,procedureseq
+			,reservationseq
+		from 
+			procedureinformation
+		where
+			reservationseq=#{reservationseq}
+	</select>
+	
+	<select id="employeeName" resultType="Idinfo" parameterType="String">
+		select 
+			name
+		from 
+			idinfo 
+		where 
+			id=#{id}
 	</select>
 </mapper>

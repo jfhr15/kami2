@@ -53,10 +53,24 @@ $(function() {
 								nai += '</h4>';
 								$(".modal-header").html(nai);
 								$('#viewModalBody').text(calEvent.content);
-								$('#id').val(calEvent.id);
-								$('#eventDate').text(
-										calEvent.start
-												.format('YYYY년 MM월 DD일 HH:mm'));
+//								$('#id').val(calEvent.id);
+								if(calEvent.groupId == null){
+									$('#eventDate').text(
+											calEvent.start
+											.format('YYYY년 MM월 DD일 HH:mm')+'~'+calEvent.end
+											.format('YYYY년 MM월 DD일 HH:mm'));
+									var ca = "";
+									ca+='<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>';
+									$("#mf").html(ca);
+								} else{
+									$('#eventDate').text(
+											calEvent.start
+											.format('YYYY년 MM월 DD일 HH:mm'));
+									var ca = "";
+									ca+='<button type="button" class="btn btn-warning" id="'+calEvent.id+'" name="cusBtn" onclick="location.href=\'goResCon?reservationseq='+calEvent.id+'\'">고객 정보</button>';
+									ca+='<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>';
+									$("#mf").html(ca);
+								}
 								$('#viewModal').modal('show')
 							},
 							displayEventEnd : true,
@@ -127,19 +141,54 @@ $(function() {
 
 	function output(cList) {
 		var c = '#5fd14b';
-		
 		$.each(cList, function(index, item) {
-			$('#calendar').fullCalendar('renderEvent', {
-				title : item.emp_Id,
-				content : item.mem_id + " 님 예약",
-				start : item.rsv_date,
-				end : item.rsv_date + item.rsv_time,
-				allDay : false,
-				id : item.reservationseq,
-				groupId : item.mem_Id,
-				backgroundColor : c
+			$.ajax({
+				url : 'selName',
+				data : {
+					id : item.mem_id
+				},
+				type : 'post',
+				success : function(result) {
+					$.ajax({
+						url : 'selProcedure',
+						data : {
+							reservationseq : item.reservationseq
+						},
+						type : 'post',
+						success : function(pcd_name) {
+							$('#calendar').fullCalendar('renderEvent', {
+								content : result + " 님 예약(" + pcd_name + ")",
+								start : item.rsv_date,
+								end : item.rsv_date + item.rsv_time,
+								allDay : false,
+								id : item.reservationseq,
+								groupId : item.mem_id,
+								backgroundColor : c
+							});
+						}
+					});
+				}
 			});
-		})
+		});
+		$.ajax({
+			url : 'yasumi',
+			data : {
+			},
+			type : 'get',
+			success : function(oList) {
+				var d = "#4b68d1";
+				$.each(oList, function(index, item) {
+					$('#calendar').fullCalendar('renderEvent', {
+						content : "휴무일",
+						start : item.off_startdate,
+						end : item.off_enddate,
+						allDay : false,
+						id : item.off_scheduleseq,
+						backgroundColor : d
+					});
+				});
+			}
+		});
 	}	
 	
 	var flag = 0;

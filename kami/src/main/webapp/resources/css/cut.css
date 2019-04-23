@@ -358,6 +358,12 @@ body { margin: 0; }
 p {
   padding-left: 100px;
 }
-.ba{
+#ba1, #ba2{
 	background-color: rgb(255, 255, 255);
+}
+#container{
+	display: flex;
+}
+#paging{
+	margin-bottom: 5%;
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kami.kami.dao.ProductDAO;
+import com.kami.kami.vo.Picture;
 import com.kami.kami.vo.Product;
 import com.kami.kami.vo.Productkind;
 
@@ -201,7 +202,14 @@ public class ProductController {
 		return "admin/detailProduct";
 	}
 		
-	
+	@RequestMapping(value = "/goDetailProduct", method = RequestMethod.GET)
+	public String goDetailProduct(int productseq, Model model) {
+		Product product = dao.selectOneProduct(productseq);
+		
+		model.addAttribute("product", product);
+		
+		return "product/detailProduct";
+	}
 }
 
 

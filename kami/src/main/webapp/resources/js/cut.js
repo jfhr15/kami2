@@ -78,4 +78,7 @@ $(function () {
 				$("#baM").css("color","black");
 			}
 	  });
+	  $("#cc1").on('click',function(){
+		 alert("1"); 
+	  });
 	});

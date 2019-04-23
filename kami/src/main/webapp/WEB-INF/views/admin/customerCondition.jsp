@@ -1,23 +1,20 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>예약 목록</title>
-	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
-    <link rel="stylesheet" href="resources/cryptos-master/style.css">
-	<link href="resources/css/reservationList.css" rel="stylesheet" />
-	
-	<link href="./resources/fullcalendar-3.10.0/fullcalendar.css" rel="stylesheet" />
-	<link href="./resources/fullcalendar-3.10.0/fullcalendar.print.css" rel="stylesheet" media="print" />
-	<link rel='stylesheet'href='./resources/bootstrap/dist/css/bootstrap.min2.css' />
-	<link rel="stylesheet" href="resources/css/home.css">
+    <title>Home</title>
 
+    <link rel="icon" href="http://www.templatemonster.com/favicon.ico">
+    <link rel="stylesheet" href="resources/cryptos-master/style.css">
+    
+    <link rel="stylesheet" href="resources/css/home.css">
+    <link rel="stylesheet" href="resources/css/condition.css">
 </head>
+
 <body>
-	<!-- ##### Preloader ##### -->
+    <!-- ##### Preloader ##### -->
     <div id="preloader">
         <i class="circle-preloader"></i>
     </div>
@@ -36,7 +33,7 @@
                                 <p>Welcome to <span>Kamikami</span></p>
                             </div>
                             <div class="login-faq-earn-money">
-                                <c:if test="${sessionScope.loginId != null}">
+                	            <c:if test="${sessionScope.loginId != null}">
  									<a href="logout">Logout</a>
  									<c:if test="${sessionScope.empType != null}">
 	 									<c:if test="${sessionScope.empType == 0}">
@@ -45,6 +42,9 @@
 	 									<c:if test="${sessionScope.empType != 0}">
 											<a href="goIndex">MyPage</a>
 										</c:if>
+									</c:if>
+									<c:if test="${sessionScope.memType != null}">
+										<a href="goIndex6">MyPage</a>
 									</c:if>
 								</c:if>
 								<c:if test="${sessionScope.loginId == null}">
@@ -115,31 +115,76 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
-	<div id="viewCal">
-	<div id="loading"></div>
-	<div id="calendar"></div>
-
-	<!-- Event View Modal -->
-	<div class="modal fade" id="viewModal" tabindex="-1" role="dialog"
-		aria-labelledby="viewModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-content" id="viewModalLabel">
-						<span id="eventDate"></span><br>
-					</h4>
-				</div>
-				<input type="hidden" id="id" name="id">
-				<div class="modal-body" id="viewModalBody"></div>
-				<div class="modal-footer" id="mf">
-				</div>
-			</div>
-		</div>
+	<div id="container">
+    <div class="im"><img src="img/${picture.savfile}"></div>
+    <div class="ta">
+    <table class="tc">
+		<tr>
+			<td>모량 </td>
+			<td>
+			<select id="conditionM" name="conditionM" >
+				<option value="M" >모량 무관</option>
+				<option value="Ms" >모량 적음</option>
+				<option value="Mm" >모량 보통</option>
+				<option value="Mb" >모량 많음</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td>모발굵기 </td>
+			<td>
+			<select id="conditionG" name="conditionG" >
+				<option value="G" >모발굵기 무관</option>
+				<option value="Gs" >모발굵기 얇음</option>
+				<option value="Gm" >모량굵기 보통</option>
+				<option value="Gb" >모량굵기 두꺼움</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td>머리 형태 </td>
+			<td>
+			<select id="conditionH" name="conditionH" >
+				<option value="H" >곱슬 무관</option>
+				<option value="Hs" >직모</option>
+				<option value="Hm" >반 곱슬</option>
+				<option value="Hb" >곱슬</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td>머리 손상도 </td>
+			<td>
+			<select id="conditionD" name="conditionD" >
+				<option value="D" >손상 무관</option>
+				<option value="Dm" >일부 손상</option>
+				<option value="Db" >심한 손상</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td>형굴형 </td>
+			<td>
+			<select id="conditionF" name="conditionF" >
+				<option value="F" >얼굴형 무관</option>
+				<option value="Fo" >계란형 얼굴</option>
+				<option value="Fr" >둥근 얼굴</option>
+				<option value="Fl" >긴 얼굴</option>
+				<option value="Fs" >각진 얼굴</option>
+			</select>
+			</td>
+		</tr>
+		<tr class="tcn">
+		<td class="tcn"></td>
+		<td class="tcn">
+			<input type="button" id="sub" value="수정">
+		</td>
+		</tr>
+		</table>
 	</div>
 	</div>
 	
-	<!-- ##### Footer Area Start ##### -->
+    <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area" id="fa">
         <!-- Main Footer Area -->
         <div class="main-footer-area section-padding-100-0 bg-img bg-overlay" >
@@ -196,20 +241,19 @@
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
-	
-	<!-- ##### All Javascript Script ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
     <script src="resources/cryptos-master/js/jquery/jquery-2.2.4.min.js"></script>
     <script src="resources/cryptos-master/js/bootstrap/popper.min.js"></script>
     <script src="resources/cryptos-master/js/bootstrap/bootstrap.min.js"></script>
     <script src="resources/cryptos-master/js/plugins/plugins.js"></script>
     <script src="resources/cryptos-master/js/active.js"></script>
     
-    <script type="text/javascript" src="resources/js/reservationList.js"></script>
-	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/lib/moment.min.js"></script>
-<!-- 	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/lib/jquery.min.js"></script> -->
-	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/fullcalendar.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/gcal.js"></script>
-	<script src='./resources/bootstrap/dist/js/bootstrap.min.js'></script>
-	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/locale/ko.js"></script>
+    <script type="text/javascript" src="resources/js/swipe.js"></script>
+    <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="resources/js/main.js"></script>
+    
+    <script type="text/javascript" src="resources/js/condition.js"></script>
 </body>
+
 </html>

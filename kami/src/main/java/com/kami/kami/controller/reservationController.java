@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kami.kami.dao.ProcedureDAO;
 import com.kami.kami.dao.ReservationDAO;
 import com.kami.kami.vo.Idinfo;
+import com.kami.kami.vo.Offschedule;
+import com.kami.kami.vo.Picture;
 import com.kami.kami.vo.Procedure;
 import com.kami.kami.vo.Procedureinfomation;
 import com.kami.kami.vo.Reservation;
@@ -24,6 +27,8 @@ public class reservationController {
 	
 	@Autowired
 	ReservationDAO rDao;
+	@Autowired
+	ProcedureDAO pDao;
 	
 	@RequestMapping(value = "/goReservation", method = RequestMethod.GET)
 	public String goReservation(Model model) {
@@ -40,13 +45,14 @@ public class reservationController {
 	}
 	
 	@RequestMapping(value = "/insertRes", method = RequestMethod.POST)
-	public @ResponseBody String insertRes(Reservation res, HttpSession session, int pcd) {
+	public @ResponseBody String insertRes(Reservation res, HttpSession session, int pcd, int pictureSeq) {
 		res.setMem_id((String)session.getAttribute("loginId"));
 		
 		Procedure p = rDao.selectProcedureOne(pcd);
 		
 		res.setRsv_time(p.getPcd_time());
-		
+		res.setPictureSeq(pictureSeq);
+		System.out.println(res);
 		rDao.insertRes(res);
 		
 		return "success";
@@ -85,7 +91,7 @@ public class reservationController {
 	}
 	
 	@RequestMapping(value = "/selectResOne", method = RequestMethod.POST)
-	public @ResponseBody Reservation selectResOne(String reservationseq) {
+	public @ResponseBody Reservation selectResOne(int reservationseq) {
 		
 		Reservation res = rDao.selectResOne(reservationseq);
 		
@@ -144,5 +150,48 @@ public class reservationController {
 		Reservation res = rDao.currentRes();
 		
 		return res;
+	}
+	
+	@RequestMapping(value = "/yasumi", method = RequestMethod.GET)
+	public @ResponseBody ArrayList<Offschedule> yasumi(HttpSession session) {
+		String emp_id = (String)session.getAttribute("loginId");
+		ArrayList<Offschedule> oList = rDao.yasumi(emp_id);
+		
+		return oList;
+	}
+	
+	@RequestMapping(value = "/selProcedure", method = RequestMethod.POST, produces = "application/text;charset=utf8")
+	public @ResponseBody String selProcedure(int reservationseq) {
+		Procedureinfomation pi = rDao.selectPI(reservationseq);
+		Procedure p = rDao.selectProcedureOne(pi.getProcedureseq());
+		
+		return p.getPcd_name();
+	}
+	
+	@RequestMapping(value = "/goReservation2", method = RequestMethod.GET)
+	public String goReservation2(Model model, int pictureSeq) {
+		ArrayList<Idinfo> eList = new ArrayList<Idinfo>();
+		model.addAttribute("eList", eList);
+		model.addAttribute("pictureSeq", pictureSeq);
+		
+		return "reservation/reservation";
+	}
+	
+	@RequestMapping(value = "/selName", method = RequestMethod.POST, produces = "application/text;charset=utf8")
+	public @ResponseBody String selName(String id) {
+		Idinfo re = rDao.employeeName(id);
+		
+		return re.getName();
+	}
+	
+	@RequestMapping(value = "/goResCon", method = RequestMethod.GET)
+	public String goResCon(Model model, int reservationseq) {
+		Reservation res = rDao.selectResOne(reservationseq);
+		Picture pic = pDao.PictureSelectOne(res.getPictureSeq());
+		
+		model.addAttribute("picture", pic);
+		model.addAttribute("res", res);
+		
+		return "admin/customerCondition";
 	}
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kami.kami.vo.Idinfo;
+import com.kami.kami.vo.Offschedule;
 import com.kami.kami.vo.Procedure;
 import com.kami.kami.vo.Procedureinfomation;
 import com.kami.kami.vo.Reservation;
@@ -54,7 +55,7 @@ public class ReservationDAO {
 		return result;
 	}
 	
-	public Reservation selectResOne(String reservationseq) {
+	public Reservation selectResOne(int reservationseq) {
 		Reservation result = null;
 		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
 		try {
@@ -148,5 +149,41 @@ public class ReservationDAO {
 			return null;
 		}
 		return res;
+	}
+	
+	public ArrayList<Offschedule> yasumi(String emp_id){
+		ArrayList<Offschedule> off = null;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			off = mapper.yasumi(emp_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return off;
+	}
+	
+	public Procedureinfomation selectPI(int reservationseq) {
+		Procedureinfomation pi = null;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			pi = mapper.selectPI(reservationseq);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return pi;
+	}
+	
+	public Idinfo employeeName(String id) {
+		Idinfo re = null;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			re = mapper.employeeName(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return re;
 	}
 }
