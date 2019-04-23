@@ -369,12 +369,15 @@ $(function(){
 		<th>성별/머리길이 </th>
 		<td>
 		<select id="setting" name="setting" >
+			
+			<option value="여자/숏" >여자/숏</option>
+			
 			<option value="남자/미디엄" >남자/미디엄</option>
 			<option value="남자/숏" >남자/숏</option>
 			<option value="여자/롱" >여자/롱</option>
 			<option value="여자/미디엄" >여자/미디엄</option>
 			<option value="여자/단발" >여자/단발</option>
-			<option value="여자/숏" >여자/숏</option>
+		
 		</select>
 		</td>
 			<th>모량 </th>

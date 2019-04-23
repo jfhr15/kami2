@@ -55,7 +55,7 @@ $(function() {
 			    cont += "<td>"+item.ORD_DATE+"</th>";
 			    cont += "<td>"+item.ORD_AMOUNT+"</th>";
 			    cont += "<td>"+item.ORD_QUANTITY+"</th>";
-			    cont += "<td><a href='"+item.RECEIPT_URL+"'>영수증 보기</a></th></tr>";
+			    cont += "<td><a href='"+item.RECEIPT_URL+"'><img src='resources/img/Receipt-3-icon.png' alt></a></th></tr>";
 			    sum = sum+item.ORD_AMOUNT;
 		    });
 		    

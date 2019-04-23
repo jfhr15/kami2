@@ -174,12 +174,12 @@
         var cont = "";
        $.each(resp,function(index,item){
        cont+="<li><div class='item'><div id='post_thumb/"+item.productseq+"?category=662142' class='post_thumb'>";
-       cont+="<span class='thumb'><a class='list_url' href='/"+item.productseq+"?category=662142' style='background-image:url(<c:url value='img/" + item.prd_ognfile + "'/>) !important'></a>";
+       cont+="<span class='thumb'><a class='list_url' style='background-image:url(<c:url value='img/" + item.prd_ognfile + "'/>) !important'></a>";
        cont+="</span></div>";
        cont+="<div class='post_thumb_content'>";
-       cont+="<div class='list_category'>"+item.kindseq+"</div>";
-       cont+="<div class='list_title'><a class='ellipsis' href='/"+item.productseq+"?category=662142'>"+item.prd_name+"</a></div>";
-       cont+="<div class='list_article'><a href='/"+item.productseq+"?category=662142' class='article_desc'>"+item.prd_content+"</a></div>";
+      /*  cont+="<div class='list_category'>"+item.kindseq+"</div>"; */  //종류별 분류값
+       cont+="<div class='list_title'><a class='ellipsis' >"+item.prd_name+"</a></div>";
+       cont+="<div class='list_article'><a  class='article_desc'>"+item.prd_content+"</a></div>";
        cont+="<div class='list_date'>"+item.prd_price2+"원</div><br>";
        cont+="<input type='number' id='quantity" + index + "' class='quantity' name='myProduct_quantity'>";
        cont+="<input type='submit' class='buyProduct' value='구매' data-sno='"+item.productseq+"' data-value='" + index + "'>";

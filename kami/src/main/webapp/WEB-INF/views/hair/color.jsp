@@ -280,12 +280,20 @@ function onClickSetting(e){
 			<div id="paging">
 				<a class="#" id="prevPage">이전</a>
 				<span class="numbox">
-					<a class="num"> <span class="selected">1</span></a>
-					<a href="#" class="num"> <span>2</span></a>
-					<a href="#" class="num"> <span>3</span></a>
-					<a href="#" class="num"> <span>4</span></a>
-					<a href="#" class="num"> <span>5</span></a>
-				</span>
+
+<c:forEach var="page" begin="${navi.startPageGroup }" end="${navi.endPageGroup }">
+	
+ 	<c:if test="${page != navi.currentPage }">
+ 		<a href="goCut?currentPage=${page}&hashtag=${hashtag}&setting=${setting}" class="num"><span>${page}</span></a> 
+	</c:if>
+ 	<c:if test="${page == navi.currentPage }">
+ 		<a class="num"> <span class="selected">${page}</span> </a> 
+	</c:if>	
+	
+</c:forEach>
+
+
+</span>
 				<a href="#" class="" id="nextPage">다음</a>
 			</div>
 		</div>	

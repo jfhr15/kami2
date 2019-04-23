@@ -3,6 +3,7 @@ package com.kami.kami.dao;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -129,12 +130,16 @@ public class ProcedureDAO {
 		}
 		
 		//사진 이름별분류
-		public ArrayList<Picture> PictureNameSelect(Picturesearch picturesearch){
+		public ArrayList<Picture> PictureNameSelect(Picturesearch picturesearch, int startRecord, int countPerPage){
+			
+			RowBounds rb = new RowBounds(startRecord, countPerPage);
+			
+			
 			ArrayList<Picture> result = new ArrayList<Picture>();
 			
 			try {
 				ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
-				result = mapper.PictureNameSelect(picturesearch);
+				result = mapper.PictureNameSelect(picturesearch, rb);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -149,6 +154,14 @@ public class ProcedureDAO {
 			picture = mapper.PictureSelectOne(pictureSeq);
 			
 			return picture;
+		}
+		
+		public int PictureCount(Picturesearch picturesearch) {
+			int result =0;
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			result = mapper.PictureCount(picturesearch);
+			
+			return result;
 		}
 
 }

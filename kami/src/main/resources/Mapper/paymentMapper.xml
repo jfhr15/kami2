@@ -95,7 +95,7 @@
 		a.billseq as billseq
 		, c.prd_name as prd_name
 		, a.ord_amount as ord_amount
-		, a.ord_date as ord_date
+		, TO_CHAR(a.ord_date, 'YYYY/MM/DD')  as ord_date 
 		, a.ord_quantity as ord_quantity
 		, b.receipt_url as receipt_url
 	from
@@ -106,7 +106,7 @@
 		a.paymentnum = b.paymentnum
 		and
 		a.mem_id = #{mem_id}
+	order by  indate
 	</select>
-	
-	
+
 </mapper>
