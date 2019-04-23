@@ -2,6 +2,8 @@ package com.kami.kami.dao;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.session.RowBounds;
+
 import com.kami.kami.vo.Condition;
 import com.kami.kami.vo.Picture;
 import com.kami.kami.vo.Picturesearch;
@@ -25,8 +27,9 @@ public interface ProcedureMapper {
 
 	public ArrayList<Product> ProductSelect();
 	//사진 이름별분류
-	public ArrayList<Picture> PictureNameSelect(Picturesearch picturesearch);
-
+	public ArrayList<Picture> PictureNameSelect(Picturesearch picturesearch, RowBounds rb);
+	public int PictureCount(Picturesearch picturesearch);
+	
 	public Picture PictureSelectOne(int pictureSeq);
 
 }

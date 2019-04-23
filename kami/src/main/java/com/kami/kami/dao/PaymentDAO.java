@@ -2,6 +2,7 @@ package com.kami.kami.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,9 +83,9 @@ public class PaymentDAO {
 	
 
 	//한명의 물건 구입 정보 조회
-	public HashMap<Object, Object> selectOrders(String mem_id) {
+	public List<HashMap<String, Object>> selectOrders(String mem_id) {
 
-		HashMap<Object, Object> orders = new HashMap<Object, Object>();
+		List<HashMap<String, Object>> orders = new ArrayList<HashMap<String, Object>>();
 		PaymentMapper mapper = session.getMapper(PaymentMapper.class);
 		try {
 			orders = mapper.selectOrders(mem_id);
@@ -92,6 +93,7 @@ public class PaymentDAO {
 			e.printStackTrace();
 			return null;
 		}
+		
 		return orders;
 	}
 	

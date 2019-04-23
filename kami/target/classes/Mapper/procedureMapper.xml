@@ -152,6 +152,14 @@
 		HASHTAG like '%'|| #{hashtag} ||'%'  and SETTING like '%'|| #{setting} ||'%'
 	 order by PICTURESEQ desc
 </select>
+<select id="PictureCount" parameterType="Picturesearch" resultType="Int">
+	SELECT 
+	COUNT(*)
+	FROM PICTURE
+	WHERE 
+		HASHTAG like '%'|| #{hashtag} ||'%'  and SETTING like '%'|| #{setting} ||'%'
+	 order by PICTURESEQ desc
+</select>
 
 </mapper>
 

@@ -5,14 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="sub entryhide js no-touch csstransforms csstransforms3d csstransitions">
 <head>
 <title>cut</title>
-	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
     <link rel="stylesheet" href="resources/cryptos-master/style.css">
     
 	<link href="resources/css/menew.css" rel="stylesheet" />
 	<link href="resources/css/style.css" rel="stylesheet" />
 	<link href="resources/css/cut.css" rel="stylesheet" />
-
+	
+	<link href="resources/test/onenaver.css" rel="stylesheet" />
+	
 </head>
 <body>
 	<!-- ##### Preloader ##### -->
@@ -115,61 +117,7 @@
     <!-- ##### Header Area End ##### -->
     
     
-<div id="cont">
 
-
-
-<div class='menu-bar'>
-	<ul class="menu">
-	    <li><a href="#4">ㅁ</a>
-	    	<ul>
-<<<<<<< HEAD
-		        <li><a href="#4A">남자</a></li>
-		        <li><a href="#4B">여자</a></li>
-=======
-		        <li><a href="#1A">1-A 메뉴</a></li>
-		        <li><a href="#1B">1-B 메뉴</a></li>
-	    	</ul>
-	    </li>
-	    
-	    
-	    <li><a href="#2">설정</a>
-	    	<ul>
-	    		<li><a href="#2A">2-A 메뉴</a></li>
-	        	<li><a href="#2B">2-B 메뉴</a>
-		          	<ul>
-		            	<li><a href="#2B1">2-B-1 메뉴</a></li>
-		            	<li><a href="#2B2">2-B-2 메뉴</a></li>
-		          	</ul>
-	       		</li>
-		        <li><a href="#2C">2-C 메뉴</a></li>
-		        <li><a href="#2D">2-D 메뉴</a>
-		        	<ul>
-		        		<li><a href="#2D1">2-D-1 메뉴</a></li>
-			            <li><a href="#2D2">2-D-2 메뉴</a></li>
-			            <li><a href="#2D3">2-D-3 메뉴</a></li>
-		        	</ul>
-	        	</li>
-	    	</ul>
-	    </li>
-	    
-	    
-	    
-	    <li><a href="#3">3번 메뉴</a>
-	    	<ul>
-		        <li><a href="#3A">3-A 메뉴</a></li>
-		        <li><a href="#3B">3-B 메뉴</a></li>
-	    	</ul>
-	    </li> 
-	    <li><a href="#4">4번 메뉴</a>
-	    	<ul>
-		        <li><a href="#4A">4-A 메뉴</a></li>
-		        <li><a href="#4B">4-B 메뉴</a></li>
->>>>>>> d3f5b01f2475e40f9f9e58ed1e28b58b33ac0751
-	    	</ul>
-	    </li> 
-	</ul>
-</div>
 
 
 <div id="overLay"></div>
@@ -177,24 +125,33 @@
   <ul class="menu">
     <li class="ba" id="ba1"><a href="#" id="baW">여자</a>
     	<ul>
-		    <li><a href="#">A</a></li>
-		    <li><a href="#">B</a></li>
+		    <li><div id="ba11" data-name="여자" onclick="onClickSetting(this)" >전체</div></li>
+		    <li><div id="ba12" data-name="여자/롱" onclick="onClickSetting(this)" >롱</div></li>
+		    <li><div id="ba13" data-name="여자/미디엄" onclick="onClickSetting(this)" >미디엄</div></li>
+	   	    <li><div id="ba14" data-name="여자/단발" onclick="onClickSetting(this)" >단발</div></li>
+	   	    <li><div id="ba15" data-name="여자/숏" onclick="onClickSetting(this)" >숏</div></li>
+	
+		  
 	    </ul>
     </li>
     <li class="ba" id="ba2"><a href="#" id="baM">남자</a>
     	<ul>
-		    <li><a href="#">ㄱ</a></li>
-		    <li><a href="#">ㄴ</a></li>
+    	
+    	
+    		<li><div id="ba21" data-name="남자" onclick="onClickSettingM(this)" >전체</div></li>
+		    <li><div id="ba22" data-name="남자/미디엄" onclick="onClickSettingM(this)" >미디엄</div></li>
+	   	    <li><div id="ba23" data-name="남자/숏" onclick="onClickSettingM(this)" >숏</div></li>
+	   	    
+		  <!--   <li><a href="#">전체</a></li>
+		    <li><a href="#">미디엄</a></li>
+		    <li><a href="#">숏</a></li> -->
 	    </ul>
     </li>
   </ul>
   <div id="btn">◀</div>
 </div>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> d3f5b01f2475e40f9f9e58ed1e28b58b33ac0751
 </div>
 	<div id="container">
 		<div id="contents">
@@ -204,40 +161,116 @@
 					
 				</div>
 			</div>
+			
+			
+			
+			<!-- 네이버 테스트 -->
+
+<div id="wrap" class="main">
+
+	<div id="header">
+		<div class="Ngnb_wrap">
+		    
+		    <div class="Nlnb" id="Nlnb">
+		        <div class="Nlnb_inner">
+		            <ul class="Nnav">
+		            <!--[D] 선택메뉴에 Nnav_item_active 추가-->
+		            <li class="Nnav_cell"><div id="id1" data-name="컷" onclick="onClick(this)" class="Nnav_item">전체</div></li>
+		         	<li class="Nnav_cell"><div id="id2" data-name="레이어드컷" onclick="onClick(this)" class="Nnav_item">레이어드컷</div></li>
+		         	<li class="Nnav_cell"><div id="id3" data-name="뱅해어" onclick="onClick(this)" class="Nnav_item">뱅해어</div></li>
+		         	<li class="Nnav_cell"><div id="id4" data-name="비대칭컷" onclick="onClick(this)" class="Nnav_item">비대칭컷</div></li>
+		         	<li class="Nnav_cell"><div id="id5" data-name="샤기컷" onclick="onClick(this)" class="Nnav_item">샤기컷</div></li>
+		         	<li class="Nnav_cell"><div id="id6" data-name="보브컷" onclick="onClick(this)" class="Nnav_item">보브컷</div></li>
+		         	<li class="Nnav_cell"><div id="id6" data-name="원랭스컷" onclick="onClick(this)" class="Nnav_item">원랭스컷</div></li>
+		         	<li class="Nnav_cell"><div id="id6" data-name="머쉬룸컷" onclick="onClick(this)" class="Nnav_item">머쉬룸컷</div></li>
+		           	<li class="Nnav_cell"><div id="id6" data-name="픽시컷" onclick="onClick(this)" class="Nnav_item">픽시컷</div></li>
+		         	
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+		
+	</div>
+	
+    
+</div>
+<script>
+$(function(){
+	
+	var setting = "${setting}";
+ 	var hashtag = "${hashtag}";
+	
+ 	
+    $("#hashtag").val(hashtag);
+    $("#setting").val(setting);
+
+});
+</script>
+
+<form id="target"action="goCut">
+<input type="hidden" id ="setting" name="setting">
+<input type="hidden" id="hashtag" name="hashtag">
+ </form>
+ 
+ <form id="targetM"action="goCutM">
+ <input type="hidden" id ="settingM" name="setting">
+</form>
+<!-- 네이버 테스트 -->
+<script>
+
+
+
+function onClick(e){
+
+	var id = e.getAttribute("id");
+ 	var hashtag = e.getAttribute("data-name");
+
+    $("#hashtag").val(hashtag); 
+    $("#target").submit();
+ 	
+  
+}
+
+function onClickSetting(e){
+
+
+ 	var setting = e.getAttribute("data-name");
+	
+ 	$("#setting").val(setting); 
+    
+    $("#target").submit();
+ 	
+}
+
+
+function onClickSettingM(e){
+
+
+ 	var setting = e.getAttribute("data-name");
+ 
+   
+ 	$("#settingM").val(setting); 
+    
+    $("#targetM").submit();
+ 	
+  
+    
+}
+
+
+
+</script>
+			
 			<div id="wrapper">
 			<div id="columns">
-				<div class="card">
-					<img src="resources/img/beautiful.jpg">							
-					<p>Roasted chicken breast with sage and spinach </p>
-				</div>
-				<div class="card">
-					<img src="resources/img/beautiful2.jpg">		
-					<p>Colorful Italian cuisine ingredients</p>
-				</div>
-				<div class="card">
-					<img src="resources/img/beautiful3.jpg">				
-					<p>Beef steaks </p>
-				</div>
-				<div class="card">
-					<img src="resources/img/beautiful4.jpg">			
-					<p>Beef burger takeaway</p>
-				</div>	
-				<div class="card">
-					<img src="resources/img/beautiful5.jpg">		
-					<p>Funny quail egg breakfast </p>
-				</div>
-				<div class="card">
-					<img src="images/pic6.jpg">		
-					<p>Fresh oranges</p>
-				</div>
-				<div class="card">
-					<img src="images/pic7.jpg">				
-					<p>Pumpkin soup</p>
-				</div>
-				<div class="card">
-					<img src="images/pic8.jpg">			
-					<p>Homemade chicken broth with vegetables </p>
-				</div>	
+				
+				
+				<c:forEach items="${picture}" var="picture">
+					<div class="card">
+						<a id="${picture.pictureSeq}" href="goDetailHair?pictureSeq=${picture.pictureSeq}"><img src="img/${picture.savfile}" /></a>	
+						<p>${picture.hashtag}</p>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 			
@@ -245,13 +278,26 @@
 		<!-- 하단 번호 -->
 			<div id="paging">
 				<a class="#" id="prevPage">이전</a>
+				
 				<span class="numbox">
-					<a class="num"> <span class="selected">1</span></a>
-					<a href="#" class="num"> <span>2</span></a>
-					<a href="#" class="num"> <span>3</span></a>
-					<a href="#" class="num"> <span>4</span></a>
-					<a href="#" class="num"> <span>5</span></a>
-				</span>
+
+<c:forEach var="page" begin="${navi.startPageGroup }" end="${navi.endPageGroup }">
+	
+ 	<c:if test="${page != navi.currentPage }">
+ 		<a href="goCut?currentPage=${page}&hashtag=${hashtag}&setting=${setting}" class="num"><span>${page}</span></a> 
+	</c:if>
+ 	<c:if test="${page == navi.currentPage }">
+ 		<a class="num"> <span class="selected">${page}</span> </a> 
+	</c:if>	
+	
+</c:forEach>
+
+
+</span>
+				
+				
+				
+				
 				<a href="#" class="" id="nextPage">다음</a>
 			</div>
 		</div>	

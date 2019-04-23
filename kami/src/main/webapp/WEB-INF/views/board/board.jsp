@@ -159,14 +159,20 @@
 <a href="">◁◁</a>
 <a href="">◀</a>
 &nbsp;&nbsp;
+<span class="numbox">
+
 <c:forEach var="page" begin="${navi.startPageGroup }" end="${navi.endPageGroup }">
+	
  	<c:if test="${page != navi.currentPage }">
- 		<a href="boardList?currentPage=${page}&searchItem=${searchItem}&searchWord=${searchWord}">${page}</a> &nbsp;
+ 		<a href="boardList?currentPage=${page}&searchItem=${searchItem}&searchWord=${searchWord}" class="num">${page}</a> &nbsp;
 	</c:if>
  	<c:if test="${page == navi.currentPage }">
- 		<span style="color:red; font-size:1.5em;">${page}</span> &nbsp;
+ 		<span class="selected">${page}</span> &nbsp;
 	</c:if>	
+	
 </c:forEach>
+
+</span>
 &nbsp;&nbsp;
 
 <a href="">▶ </a> 
