@@ -42,6 +42,7 @@ $(function(){
 						$('#ehour').val(date.format('HH'))
 						$('#emin').val(date.format('mm'))
 						$('#content').val("");
+						$(".modal-header").html("휴무");
 						$("#division").html("");
 						$('#writeModal').modal('show')
 						$("#shour option:eq(0)").prop("selected", true);
@@ -67,6 +68,7 @@ $(function(){
 						if(calEvent.title == "휴무 신청 중"){
 							var tt = "";
 							tt += "<button type='button' class='btn btn-warning' id='deleteBtn' name='deleteBtn'>삭제</button>";
+							tt += "<button type='button' class='btn btn-warning' id='updateBtn' name='updateBtn'>수정</button>";
 							tt += "<button type='button' class='btn btn-default' data-dismiss='modal'>닫기</button>";
 							$("#modal-footer-btn").html(tt);
 						} else {
@@ -151,7 +153,7 @@ function output(num, cList) {
 		$.each(cList, function(index, item) {
 			$('#calendar').fullCalendar('renderEvent', {
 				title : "휴무 신청 중",
-				content : "디자이너 "+item.emp_id+" 휴무 신청 중",
+				content : "휴무 신청 중",
 				start : item.off_startdate,
 				end : item.off_enddate,
 				allDay : false,
@@ -166,7 +168,7 @@ function output(num, cList) {
 		$.each(cList, function(index, item) {
 			$('#calendar').fullCalendar('renderEvent', {
 				title : "휴무 승인",
-				content : "디자이너 "+item.emp_id+"휴무 승인",
+				content : "휴무 승인",
 				start : item.off_startdate,
 				end : item.off_enddate,
 				allDay : false,

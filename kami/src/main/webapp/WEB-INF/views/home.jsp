@@ -42,9 +42,6 @@
 											<a href="goIndex">MyPage</a>
 										</c:if>
 									</c:if>
-									<c:if test="${sessionScope.memType != null}">
-										<a href="goIndex6">MyPage</a>
-									</c:if>
 								</c:if>
 								<c:if test="${sessionScope.loginId == null}">
                               		<a href="goLogin">Login</a>
@@ -148,12 +145,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center mx-auto">
-                        <c:if test="${sessionScope.loginId != null}">
-	                        <h3>Recommend hair</h3>
-                        </c:if>
-                        <c:if test="${sessionScope.loginId == null}">
-	                        <h3>New Arrival</h3>
-                        </c:if>
+                        <h3>New Arrival</h3>
                     </div>
                 </div>
             </div>
@@ -189,12 +181,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center mx-auto">
-                        <c:if test="${sessionScope.loginId != null}">
-	                        <h3>Recommend Product</h3>
-                        </c:if>
-                        <c:if test="${sessionScope.loginId == null}">
-	                        <h3>New Arrival</h3>
-                        </c:if>
+                        <h3>New Arrival</h3>
                     </div>
                 </div>
             </div>
@@ -204,7 +191,7 @@
 		      <ul>
 		      
 		    	<c:forEach items="${product}" var="product">
-		    	 <li class="tt"><a href="goDetailProduct?productseq=${product.productseq}"><img src="img/${product.prd_ognfile}" alt="" /></a></li>
+		    	 <li class="tt"><a href="#"><img src="img/${product.prd_ognfile}" alt="" /></a></li>
 		    	</c:forEach>
 		      </ul>
 		      <p class="prev_btn2">

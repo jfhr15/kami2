@@ -12,7 +12,7 @@
 	<link href="resources/css/menew.css" rel="stylesheet" />
 	<link href="resources/css/style.css" rel="stylesheet" />
 	<link href="resources/css/cut.css" rel="stylesheet" />
-	<link rel="stylesheet" href="resources/css/home.css">
+
 </head>
 <body>
 	<!-- ##### Preloader ##### -->
@@ -119,14 +119,65 @@
 
 
 
+<div class='menu-bar'>
+	<ul class="menu">
+	    <li><a href="#4">ㅁ</a>
+	    	<ul>
+<<<<<<< HEAD
+		        <li><a href="#4A">남자</a></li>
+		        <li><a href="#4B">여자</a></li>
+=======
+		        <li><a href="#1A">1-A 메뉴</a></li>
+		        <li><a href="#1B">1-B 메뉴</a></li>
+	    	</ul>
+	    </li>
+	    
+	    
+	    <li><a href="#2">설정</a>
+	    	<ul>
+	    		<li><a href="#2A">2-A 메뉴</a></li>
+	        	<li><a href="#2B">2-B 메뉴</a>
+		          	<ul>
+		            	<li><a href="#2B1">2-B-1 메뉴</a></li>
+		            	<li><a href="#2B2">2-B-2 메뉴</a></li>
+		          	</ul>
+	       		</li>
+		        <li><a href="#2C">2-C 메뉴</a></li>
+		        <li><a href="#2D">2-D 메뉴</a>
+		        	<ul>
+		        		<li><a href="#2D1">2-D-1 메뉴</a></li>
+			            <li><a href="#2D2">2-D-2 메뉴</a></li>
+			            <li><a href="#2D3">2-D-3 메뉴</a></li>
+		        	</ul>
+	        	</li>
+	    	</ul>
+	    </li>
+	    
+	    
+	    
+	    <li><a href="#3">3번 메뉴</a>
+	    	<ul>
+		        <li><a href="#3A">3-A 메뉴</a></li>
+		        <li><a href="#3B">3-B 메뉴</a></li>
+	    	</ul>
+	    </li> 
+	    <li><a href="#4">4번 메뉴</a>
+	    	<ul>
+		        <li><a href="#4A">4-A 메뉴</a></li>
+		        <li><a href="#4B">4-B 메뉴</a></li>
+>>>>>>> d3f5b01f2475e40f9f9e58ed1e28b58b33ac0751
+	    	</ul>
+	    </li> 
+	</ul>
+</div>
 
 
 <div id="overLay"></div>
 <div id="side_menu" class='menu-bar'>
   <ul class="menu">
     <li class="ba" id="ba1"><a href="#" id="baW">여자</a>
-    	<ul id="bb1">
-		    <li id="cc1"><a href="#">A</a></li>
+    	<ul>
+		    <li><a href="#">A</a></li>
 		    <li><a href="#">B</a></li>
 	    </ul>
     </li>
@@ -140,6 +191,10 @@
   <div id="btn">◀</div>
 </div>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> d3f5b01f2475e40f9f9e58ed1e28b58b33ac0751
 </div>
 	<div id="container">
 		<div id="contents">
@@ -200,66 +255,7 @@
 				<a href="#" class="" id="nextPage">다음</a>
 			</div>
 		</div>	
-		
 	</div>
-	
-	<!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area" id="fa">
-        <!-- Main Footer Area -->
-        <div class="main-footer-area section-padding-100-0 bg-img bg-overlay" >
-            <div class="container">
-                <div class="row">
-					<div class="footerV1">
-						<div class="w4" id="im1">
-                        	<img class="w5" src="resources/img/ajax.jpg" alt="">
-                        </div>
-                        <div class="w4" id="im2">
-                        	<img class="w5" src="resources/img/spring.png" alt="">
-                        </div>
-                        <div class="w4" id="im3">
-                        	<img class="w5" src="resources/img/tom.png" alt="">
-                        </div>
-                        <div class="w4" id="im4">
-                        	<img class="w5" src="resources/img/git.png" alt="">
-                        </div>
-                        <div class="w4" id="im5">
-                        	<img class="w5" src="resources/img/jquery.png" alt="">
-                        </div>
-                        <div class="w4" id="im6">
-                        	<img class="w5" src="resources/img/java.jpg" alt="">
-                        </div>
-					</div>
-                    <!-- Footer Widget Area -->
-                    <div class="footerV2">
-                        <div class="footerW">
-                            <div class="w1" id="iw1">
-                                <a href="#"><img src="resources/cryptos-master/img/core-img/logo.png" alt=""></a>
-                            </div>
-                            <div class="w1" id="iw2">
-                            <p class="w3">
-							주소 : 서울 강남구 영동대로 513 삼성동 159 코엑스 4층<br>
-							사업자 등록번호 : 102-93-48576<br>
-							</p>
-							</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bottom Footer Area -->
-        <div class="bottom-footer-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-12">
-                        <p>
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-						</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area Start ##### -->
 	
 	<!-- ##### All Javascript Script ##### -->
     <script src="resources/cryptos-master/js/jquery/jquery-2.2.4.min.js"></script>

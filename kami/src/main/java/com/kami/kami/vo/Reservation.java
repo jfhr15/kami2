@@ -8,12 +8,11 @@ public class Reservation {
 	private String rsv_date; //예약날짜
 	private String rsv_time; //예약시간
 	private int rsv_totalPrice;
-	private int pictureSeq;
 	public Reservation() {
 		super();
 	}
 	public Reservation(int reservationseq, String emp_id, String mem_id, String paymentNum, String rsv_date,
-			String rsv_time, int rsv_totalPrice, int pictureSeq) {
+			String rsv_time, int rsv_totalPrice) {
 		super();
 		this.reservationseq = reservationseq;
 		this.emp_id = emp_id;
@@ -22,7 +21,6 @@ public class Reservation {
 		this.rsv_date = rsv_date;
 		this.rsv_time = rsv_time;
 		this.rsv_totalPrice = rsv_totalPrice;
-		this.pictureSeq = pictureSeq;
 	}
 	public int getReservationseq() {
 		return reservationseq;
@@ -66,16 +64,10 @@ public class Reservation {
 	public void setRsv_totalPrice(int rsv_totalPrice) {
 		this.rsv_totalPrice = rsv_totalPrice;
 	}
-	public int getPictureSeq() {
-		return pictureSeq;
-	}
-	public void setPictureSeq(int pictureSeq) {
-		this.pictureSeq = pictureSeq;
-	}
 	@Override
 	public String toString() {
 		return "Reservation [reservationseq=" + reservationseq + ", emp_id=" + emp_id + ", mem_id=" + mem_id
 				+ ", paymentNum=" + paymentNum + ", rsv_date=" + rsv_date + ", rsv_time=" + rsv_time
-				+ ", rsv_totalPrice=" + rsv_totalPrice + ", pictureSeq=" + pictureSeq + "]";
+				+ ", rsv_totalPrice=" + rsv_totalPrice + "]";
 	}
 }
